@@ -31,7 +31,7 @@ end
       :product => "firefox", # source: http://code.flickr.net/2008/09/04/whos-on-first/
       :created_date => "09/05/2018",
       :locale => "en-US",
-      :ordering => "+updated",
+      :ordering => "created",
      # :ordering => "+created",
      # :max_questions => 10,
    #   :created => 2,
