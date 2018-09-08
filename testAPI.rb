@@ -42,4 +42,5 @@ url = "https://support.mozilla.org/api/2/question/"
 questions  = getKitsuneResponse(url, url_params)
 ap questions
 ap questions.length
+ap questions.results.length
 
