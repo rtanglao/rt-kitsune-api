@@ -30,7 +30,7 @@ end
       :format => "json",
       :product => "firefox", # source: http://code.flickr.net/2008/09/04/whos-on-first/
       #:created_date => "09/05/2018",
-      :created => "2018-09-05",
+      :created_date => "2018-09-05",
       :locale => "en-US",
    #   :ordering => "created",
       :ordering => "+created",
