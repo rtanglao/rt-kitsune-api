@@ -38,7 +38,7 @@ end
  #     :sortby => 1
 } 
 
-url = "https://support.mozilla.org/api/2/question"
+url = "https://support.mozilla.org/api/2/question/"
 questions  = getKitsuneResponse(url, url_params)
 ap questions
 ap questions.length
