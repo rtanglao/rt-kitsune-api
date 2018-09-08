@@ -32,13 +32,13 @@ end
       :created_date => "09/05/2018",
       :locale => "en-US",
    #   :ordering => "created",
-     # :ordering => "+created",
+      :ordering => "+created",
      # :max_questions => 10,
    #   :created => 2,
  #     :sortby => 1
 } 
 
-url = "https://support.mozilla.org/api/2/question/"
+url = "https://support.mozilla.org/api/2/question"
 questions  = getKitsuneResponse(url, url_params)
 ap questions
 ap questions.length
