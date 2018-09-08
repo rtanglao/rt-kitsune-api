@@ -5,7 +5,6 @@ require 'typhoeus'
 require 'awesome_print'
 
 def getKitsuneResponse(url, params)
-  # url = "https://api.instagram.com/v1/" + url
   result = Typhoeus::Request.get(url,
     :params => params )
   try_count = 0
@@ -31,10 +30,8 @@ end
       :format => "json",
       :product => "firefox", # source: http://code.flickr.net/2008/09/04/whos-on-first/
       :created_date => "09/05/2018",
-   #   :distance => "5000",
-   #   :min_timestamp => min_taken_date_str,
-   #   :max_timestamp => max_taken_date_str,
-   #   :count => 100
+      :created => 2,
+      :sortby => 2
 } 
 
 url = "https://support.mozilla.org/api/2/question/"
