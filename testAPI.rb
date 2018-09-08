@@ -35,7 +35,7 @@ end
      # :ordering => "+created",
      # :max_questions => 10,
    #   :created => 2,
-      :sortby => 1
+ #     :sortby => 1
 } 
 
 url = "https://support.mozilla.org/api/2/question/"
