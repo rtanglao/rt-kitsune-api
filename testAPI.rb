@@ -31,11 +31,13 @@ end
       :product => "firefox", # source: http://code.flickr.net/2008/09/04/whos-on-first/
       :created_date => "09/05/2018",
       :locale => "en-US",
+      :max_questions => 10,
    #   :created => 2,
     #  :sortby => 2
 } 
 
 url = "https://support.mozilla.org/api/2/question/"
 questions  = getKitsuneResponse(url, url_params)
-ap questions.length
 ap questions
+ap questions.length
+
