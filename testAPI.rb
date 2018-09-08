@@ -31,11 +31,11 @@ end
       :product => "firefox", # source: http://code.flickr.net/2008/09/04/whos-on-first/
       :created_date => "09/05/2018",
       :locale => "en-US",
-      :ordering => "created",
+   #   :ordering => "created",
      # :ordering => "+created",
      # :max_questions => 10,
    #   :created => 2,
-    #  :sortby => 2
+      :sortby => 1
 } 
 
 url = "https://support.mozilla.org/api/2/question/"
