@@ -93,7 +93,7 @@ begin
   end
      id = question["id"]
      #questionsColl.find({ 'id' => id }).update_one(
-       question,:upsert => true )
+       #question,:upsert => true )
   end
   break if end_program
     
