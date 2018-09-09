@@ -84,7 +84,7 @@ begin
   questions["results"].each do|question|
       logger.debug "created:" + question["created"]
       created = Date.parse(question["created"]).to_time
-      $logger.debug "QUESTION created:" + created.to_i.to_s
+      logger.debug "QUESTION created:" + created.to_i.to_s
       question["created"] = created
       #if datetaken < min_taken_date_from_instagram
       #  min_taken_date_from_instagram = datetaken
