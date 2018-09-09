@@ -82,6 +82,7 @@ question_number = 0
 begin
   questions  = getKitsuneResponse(url, url_params)
   url = questions["next"]
+  logger.debug "next url:" + url
   url_params = nil
   questions["results"].each do|question|
       logger.debug "created:" + question["created"]
