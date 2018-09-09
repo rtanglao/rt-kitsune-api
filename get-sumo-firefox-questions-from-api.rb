@@ -90,10 +90,10 @@ begin
       #if datetaken < min_taken_date_from_instagram
       #  min_taken_date_from_instagram = datetaken
       exit if created < MIN_DATE
-  end
-  id = question["id"]
+      id = questions["id"]
+      logger.debug "QUESTION id:" + id.to_s
      #questionsColl.find({ 'id' => id }).update_one(
        #question,:upsert => true )
-  #end
+  end
     
 end
