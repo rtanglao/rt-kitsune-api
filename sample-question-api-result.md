@@ -2,6 +2,20 @@
 ```ruby
 ap questions["results"][0], { :html => true}
 ```
+## questions
+* beginning of questions json
+
+```json
+{
+  "count" => 360927,
+   "next" => 
+   "https://support.mozilla.org/api/2/question/?format=json&locale=en-US&ordering=%2Bcreated&page=2&product=firefox",
+   "previous" => nil,
+}
+```
+
+
+## results i.e. questions["results"]
 <pre>{
                 &quot;answers&quot;<kbd style="color:slategray"> =&gt; </kbd>[],
                 &quot;content&quot;<kbd style="color:slategray"> =&gt; </kbd><kbd style="color:brown">&quot;&lt;p&gt;Restart computer to reestablish icon? If so, why did it vanish in the first place? Security or safety of using computers is called into\nquestion every time these unexplained occurrences take place. Thank you for your reply.\n&lt;/p&gt;&quot;</kbd>,
