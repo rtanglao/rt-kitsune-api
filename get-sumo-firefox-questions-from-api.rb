@@ -85,7 +85,7 @@ begin
       $stderr.printf("created:%s\n", question["created"])
       created = Date.parse(question["created"]).to_time.to_i
       $stderr.printf("QUESTION created:%s\n", created)
-      photo["created"] = created
+      question["created"] = created
       #if datetaken < min_taken_date_from_instagram
       #  min_taken_date_from_instagram = datetaken
       exit
