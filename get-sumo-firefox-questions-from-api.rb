@@ -82,9 +82,9 @@ begin
   questions  = getKitsuneResponse(url, url_params)
   url = questions["next"]
   questions["results"].each do|question|
-      $stderr.printf("created:%s\n", question["created"])
-      created = Date.parse(question["created"]).to_time.to_i
-      $stderr.printf("QUESTION created:%s\n", created)
+      logger.debug "created:" + question["created"]
+      created = Date.parse(question["created"]).to_time
+      $logger.debug "QUESTION created:" + created
       question["created"] = created
       #if datetaken < min_taken_date_from_instagram
       #  min_taken_date_from_instagram = datetaken
