@@ -42,6 +42,7 @@ questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 MAX_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 23, 59) # may want Time.utc if you don't want local time
 
+number_of_tabs_for_this_day = 0
 questionsColl.find(:created =>
   {
     :$gte => MIN_DATE,
@@ -53,8 +54,13 @@ questionsColl.find(:created =>
     "id" => 1
   }).each do |q|
   id = q["id"]
+
+  number_of_tabs_for_this_day += 1
   logger.debug "QUESTION id:" + id.to_s
   Launchy.open("http://support.mozilla.org/questions/" + id.to_s)
+  sleep(0.5)
 end
+  logger.debug "number of tabs fo this day:" + number_of_tabs_for_this_day.to_s
+
   
 
