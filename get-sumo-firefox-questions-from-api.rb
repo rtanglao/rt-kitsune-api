@@ -79,7 +79,7 @@ url = "https://support.mozilla.org/api/2/question/"
 end_program = false
 question_number = 0
   
-while !exit_program 
+while !end_program 
   questions  = getKitsuneResponse(url, url_params)
   url = questions["next"]
   logger.debug "next url:" + url
@@ -92,7 +92,7 @@ while !exit_program
       #if datetaken < min_taken_date_from_instagram
       #  min_taken_date_from_instagram = datetaken
       if created < MIN_DATE
-        exit_program = true
+        end_program = true
         break
       end
       id = question["id"]
