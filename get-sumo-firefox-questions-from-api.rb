@@ -95,6 +95,8 @@ begin
      #questionsColl.find({ 'id' => id }).update_one(
        #question,:upsert => true )
   #end
-  break if end_program
+  if end_program
+    break
+  end
     
 end
