@@ -81,6 +81,7 @@ end_program = false
 begin
   questions  = getKitsuneResponse(url, url_params)
   url = questions["next"]
+  url_params = nil
   questions["results"].each do|question|
       logger.debug "created:" + question["created"]
       created = Date.parse(question["created"]).to_time
@@ -88,7 +89,7 @@ begin
       question["created"] = created
       #if datetaken < min_taken_date_from_instagram
       #  min_taken_date_from_instagram = datetaken
-      exit
+      exit if created < MIN_DATE
   end
   id = question["id"]
      #questionsColl.find({ 'id' => id }).update_one(
