@@ -83,7 +83,7 @@ begin
   url = questions["next"]
   questions["results"].each do|question|
       $stderr.printf("created:%s\n", question["created"])
-      created = Date.parse(question["created"]).to_time.to_i)
+      created = Date.parse(question["created"]).to_time.to_i
       created = created.utc
       $stderr.printf("QUESTION created:%s\n", created)
       photo["created"] = created
