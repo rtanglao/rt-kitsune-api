@@ -27,10 +27,10 @@ def getKitsuneResponse(url, params)
 end
 
 url_params = {
-      :format => "json",
-      :product => "firefox", 
-      :locale => "en-US",
-      :ordering => "+created",
+  :format => "json",
+  :product => "firefox", 
+  :locale => "en-US",
+  :ordering => "+created",
 } 
 
 url = "https://support.mozilla.org/api/2/question/"
