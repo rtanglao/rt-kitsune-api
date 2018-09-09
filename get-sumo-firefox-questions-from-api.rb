@@ -64,8 +64,8 @@ if ARGV.length < 3
   exit
 end
 
-#questionsColl = db[:questions]
-#questionsColl.indexes.create_one({ "id" => -1 }, :unique => true)
+questionsColl = db[:questions]
+questionsColl.indexes.create_one({ "id" => -1 }, :unique => true)
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
       
 url_params = {
@@ -85,22 +85,28 @@ while !end_program
   logger.debug "next url:" + url
   url_params = nil
   questions["results"].each do|question|
-      logger.debug "created:" + question["created"]
-      created = Date.parse(question["created"]).to_time
-      logger.debug "QUESTION created:" + created.to_i.to_s
-      question["created"] = created
-      #if datetaken < min_taken_date_from_instagram
-      #  min_taken_date_from_instagram = datetaken
-      if created < MIN_DATE
-        end_program = true
-        break
-      end
-      id = question["id"]
-      logger.debug "QUESTION id:" + id.to_s
-      question_number += 1
-      logger.debug "QUESTION number:" + question_number.to_s
-
-     #questionsColl.find({ 'id' => id }).update_one(
-       #question,:upsert => true )
+    logger.debug "created:" + question["created"]
+    created = Date.parse(question["created"]).to_time
+    logger.debug "QUESTION created:" + created.to_i.to_s
+    question["created"] = created
+    if created < MIN_DATE
+      end_program = true
+      break
+    end
+    id = question["id"]
+    logger.debug "QUESTION id:" + id.to_s
+    question_number += 1
+    logger.debug "QUESTION number:" + question_number.to_s
+    result_array = reviewsColl.find({ 'id' => id }).update_one(question, :upsert => true ).to_a
+    nModified = 0
+    result_array.each do |item|
+      nModified = item["nModified"] if item.include?("nModified") 
+      break
+    end
+    if nModified == 0
+      logger.debug "INSERTED^^"
+    else
+      logger.debug "UPDATED^^^^^^"
+    end
   end 
 end
