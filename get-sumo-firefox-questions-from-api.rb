@@ -97,7 +97,7 @@ while !end_program
     logger.debug "QUESTION id:" + id.to_s
     question_number += 1
     logger.debug "QUESTION number:" + question_number.to_s
-    result_array = reviewsColl.find({ 'id' => id }).update_one(question, :upsert => true ).to_a
+    result_array = questionsColl.find({ 'id' => id }).update_one(question, :upsert => true ).to_a
     nModified = 0
     result_array.each do |item|
       nModified = item["nModified"] if item.include?("nModified") 
