@@ -77,6 +77,7 @@ url_params = {
 
 url = "https://support.mozilla.org/api/2/question/"
 end_program = false
+question_number = 0
   
 begin
   questions  = getKitsuneResponse(url, url_params)
@@ -92,6 +93,9 @@ begin
       exit if created < MIN_DATE
       id = question["id"]
       logger.debug "QUESTION id:" + id.to_s
+      question_number += 1
+      logger.debug "QUESTION number:" + question_number.to_s
+
      #questionsColl.find({ 'id' => id }).update_one(
        #question,:upsert => true )
   end
