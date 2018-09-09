@@ -7,7 +7,8 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 cd ~/GIT/rt-kitsune-api
 . setupDatabase
 pushd ~/rtanglao/MONGODB_DATABASES/KITSUNE_QUESTIONS
-mongod --config --dbpath . &
+mongod --config --dbpath . & # on Windows Subystem for Linux
+mongod --dbpath . & # on Mac OS X
 popd
 ```
 ## 08September2018 populate database
