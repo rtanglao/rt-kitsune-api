@@ -79,7 +79,7 @@ url = "https://support.mozilla.org/api/2/question/"
 end_program = false
 question_number = 0
   
-begin
+while !exit_program 
   questions  = getKitsuneResponse(url, url_params)
   url = questions["next"]
   logger.debug "next url:" + url
@@ -91,7 +91,10 @@ begin
       question["created"] = created
       #if datetaken < min_taken_date_from_instagram
       #  min_taken_date_from_instagram = datetaken
-      exit if created < MIN_DATE
+      if created < MIN_DATE
+        exit_program = true
+        break
+      end
       id = question["id"]
       logger.debug "QUESTION id:" + id.to_s
       question_number += 1
@@ -99,6 +102,5 @@ begin
 
      #questionsColl.find({ 'id' => id }).update_one(
        #question,:upsert => true )
-  end
-    
+  end 
 end
