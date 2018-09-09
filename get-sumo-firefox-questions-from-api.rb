@@ -60,9 +60,13 @@ if MONGO_USER
 end
 
 if ARGV.length < 3
-  puts "usage: #{$0} yyyy mm dd" #start date (since api always goes from latest backwards)
+  puts "usage: #{$0} yyyy mm dd" #start date (since api always goes from latest backwards to the start date)
   exit
 end
+
+#questionsColl = db[:questions]
+#questionsColl.indexes.create_one({ "id" => -1 }, :unique => true)
+MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
       
 url_params = {
   :format => "json",
@@ -72,8 +76,25 @@ url_params = {
 } 
 
 url = "https://support.mozilla.org/api/2/question/"
-questions  = getKitsuneResponse(url, url_params)
-ap questions["results"][0], { :html => true}
-ap questions.length
-ap questions["results"].length
-
+end_program = false
+  
+begin
+  questions  = getKitsuneResponse(url, url_params)
+  url = questions["next"]
+  questions["results"].each do|question|
+      $stderr.printf("created:%s\n", question["created"])
+      created = Date.parse(question["created"]).to_time.to_i)
+      created = created.utc
+      $stderr.printf("QUESTION created:%s\n", created)
+      photo["created"] = created
+      #if datetaken < min_taken_date_from_instagram
+      #  min_taken_date_from_instagram = datetaken
+      exit
+  end
+     id = question["id"]
+     #questionsColl.find({ 'id' => id }).update_one(
+       question,:upsert => true )
+  end
+  break if end_program
+    
+end
