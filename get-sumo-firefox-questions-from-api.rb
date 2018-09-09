@@ -13,6 +13,27 @@ require 'pp'
 
 # based on:# https://github.com/rtanglao/2016-rtgram/blob/master/backupPublicVancouverPhotosByDateTaken.rb
 
+def getKitsuneResponse(url, params)
+  result = Typhoeus::Request.get(url,
+    :params => params )
+  try_count = 0
+  begin
+    x = JSON.parse(result.body)
+  rescue JSON::ParserError => e
+    try_count += 1
+    if try_count < 4
+      $stderr.printf("JSON::ParserError exception, retry:%d\n",\
+                     try_count)
+      sleep(10)
+      retry
+    else
+      $stderr.printf("JSON::ParserError exception, retrying FAILED\n")
+      # raise e
+      x = nil
+    end
+  end
+  return x
+end
 logger = Logger.new(STDERR)
 logger.level = Logger::DEBUG
 Mongo::Logger.logger.level = Logger::FATAL
@@ -38,28 +59,11 @@ if MONGO_USER
   end
 end
 
-def getKitsuneResponse(url, params)
-  result = Typhoeus::Request.get(url,
-    :params => params )
-  try_count = 0
-  begin
-    x = JSON.parse(result.body)
-  rescue JSON::ParserError => e
-    try_count += 1
-    if try_count < 4
-      $stderr.printf("JSON::ParserError exception, retry:%d\n",\
-                     try_count)
-      sleep(10)
-      retry
-    else
-      $stderr.printf("JSON::ParserError exception, retrying FAILED\n")
-      # raise e
-      x = nil
-    end
-  end
-  return x
+if ARGV.length < 3
+  puts "usage: #{$0} yyyy mm dd" #start date (since api always goes from latest backwards)
+  exit
 end
-
+      
 url_params = {
   :format => "json",
   :product => "firefox", 
