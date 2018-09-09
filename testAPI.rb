@@ -41,7 +41,7 @@ end
 
 url = "https://support.mozilla.org/api/2/question/"
 questions  = getKitsuneResponse(url, url_params)
-ap questions
+ap questions["results"][0], { :html => true}
 ap questions.length
 ap questions["results"].length
 
