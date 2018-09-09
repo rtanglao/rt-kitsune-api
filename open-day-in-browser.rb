@@ -8,7 +8,6 @@ require 'mongo'
 require 'logger'
 require 'launchy'
 
-
 logger = Logger.new(STDERR)
 logger.level = Logger::DEBUG
 Mongo::Logger.logger.level = Logger::FATAL
@@ -55,6 +54,7 @@ questionsColl.find(:created =>
   }).each do |q|
   id = q["id"]
   logger.debug "QUESTION id:" + id.to_s
+  Launchy.open("http://support.mozilla.org/questions/" + id.to_s)
 end
   
 
