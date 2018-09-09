@@ -3,6 +3,40 @@ require 'json'
 require 'rubygems'
 require 'typhoeus'
 require 'awesome_print'
+require 'json'
+require 'time'
+require 'date'
+require 'mongo'
+require 'csv'
+require 'logger'
+require 'pp'
+
+# based on:# https://github.com/rtanglao/2016-rtgram/blob/master/backupPublicVancouverPhotosByDateTaken.rb
+
+logger = Logger.new(STDERR)
+logger.level = Logger::DEBUG
+Mongo::Logger.logger.level = Logger::FATAL
+MONGO_HOST = ENV["MONGO_HOST"]
+raise(StandardError,"Set Mongo hostname in ENV: 'MONGO_HOST'") if !MONGO_HOST
+MONGO_PORT = ENV["MONGO_PORT"]
+raise(StandardError,"Set Mongo port in ENV: 'MONGO_PORT'") if !MONGO_PORT
+MONGO_USER = ENV["MONGO_USER"]
+# raise(StandardError,"Set Mongo user in ENV: 'MONGO_USER'") if !MONGO_USER
+MONGO_PASSWORD = ENV["MONGO_PASSWORD"]
+# raise(StandardError,"Set Mongo user in ENV: 'MONGO_PASSWORD'") if !MONGO_PASSWORD
+SUMO_QUESTIONS_DB = ENV["SUMO_QUESTIONS_DB"]
+raise(StandardError,\
+      "Set SUMO questions  database name in ENV: 'SUMO_QUESTIONS_DB'") \
+if !SUMO_QUESTIONS_DB
+
+db = Mongo::Client.new([MONGO_HOST], :database => SUMO_QUESTIONS_DB)
+if MONGO_USER
+  auth = db.authenticate(MONGO_USER, MONGO_PASSWORD)
+  if !auth
+    raise(StandardError, "Couldn't authenticate, exiting")
+    exit
+  end
+end
 
 def getKitsuneResponse(url, params)
   result = Typhoeus::Request.get(url,
