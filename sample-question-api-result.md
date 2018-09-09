@@ -3,14 +3,14 @@
 ap questions["results"][0], { :html => true}
 ```
 ## questions
-* beginning of questions json
+* beginning of questions json (as a ruby data structure)
 
-```json
+```ruby
 {
   "count" => 360927,
-   "next" => 
-   "https://support.mozilla.org/api/2/question/?format=json&locale=en-US&ordering=%2Bcreated&page=2&product=firefox",
-   "previous" => nil,
+  "next" => 
+    "https://support.mozilla.org/api/2/question/?format=json&locale=en-US&ordering=%2Bcreated&page=2&product=firefox",
+  "previous" => nil,
 }
 ```
 
