@@ -60,7 +60,7 @@ questionsColl.find(:created =>
   Launchy.open("http://support.mozilla.org/questions/" + id.to_s)
   sleep(0.5)
 end
-  logger.debug "number of tabs fo this day:" + number_of_tabs_for_this_day.to_s
+  logger.debug "number of tabs for this day:" + number_of_tabs_for_this_day.to_s
 
   
 
