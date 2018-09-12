@@ -41,5 +41,5 @@ end
 
 url = "https://support.mozilla.org/api/2/answer/"
 answer  = getKitsuneResponse(url, url_params)
-ap answer
+ap answer, { :html => true}
 
