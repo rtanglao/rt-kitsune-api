@@ -1,7 +1,15 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
-## 11September how to open tab in a browser (doesn't work in WSL)
+## 11September2018 answer API
+
+* like the questionAPI this was discovered in [jscher2000's myq.html code](https://github.com/jscher2000/My-SuMo-Questions/blob/master/myq.html)!
+* sample answer API code: https://github.com/rtanglao/rt-kitsune-api/blob/master/answerTestAPI.rb 
+* sample reply API code: https://github.com/rtanglao/rt-kitsune-api/blob/master/testAPI.rb
+
+```https://support.mozilla.org/api/2/answer/?format=json&id=<question_id>```
+
+## 10September2018 how to open tab in a browser (doesn't work in WSL)
 * more info on why it doesn't work in WSL:
   * http://rolandtanglao.com/2018/09/09/p1-still-cannot-launch-firefox-from-wsl-without-lots-of-yakshaving/
 
