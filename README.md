@@ -2,6 +2,18 @@
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 17september2018
+
+### 17september2018 mongodb query to get questions for Thursday13Sept-Sat15Sept2018
+
+```json
+{
+    "created": {
+        "$gte": ISODate("2018-09-13T00:00:00-07:00"),
+        "$lt" : ISODate("2018-09-16T00:00:00-07:00")
+    }
+}
+```
+
 ### 17september2018 how to compute an operating system tag
 * the following code is from [tim smith](https://github.com/tdsmith), thanks Tim!
 
