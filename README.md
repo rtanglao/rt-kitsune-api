@@ -3,7 +3,7 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 17september2018
 ### 17september2018 how to compute an operating system tag
-* from tim smith, thanks Tim!
+* the following code is from [tim smith](https://github.com/tdsmith), thanks Tim!
 
 ```r
 os_tags <-
