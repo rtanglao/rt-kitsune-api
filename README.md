@@ -2,6 +2,21 @@
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 17september2018
+### 17september2018 how to compute an operating system tag
+* from tim smith, thanks Tim!
+
+```r
+os_tags <-
+read_csv("
+  https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/16september2018-tags-5-11september2018.csv") 
+  %>%
+    filter(
+      grepl("^windows-", tag) |
+             (tag == "mac-os") |
+             (tag == "linux")) 
+  %>%
+ mutate(os=ifelse(grepl("^windows-", tag), "windows", tag))
+```
 ### 17september2018 how to read a file of tags and collapse
 
 * test.txt has:
