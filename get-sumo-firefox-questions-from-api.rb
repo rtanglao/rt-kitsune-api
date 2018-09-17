@@ -86,7 +86,7 @@ while !end_program
   url_params = nil
   questions["results"].each do|question|
     logger.debug "created:" + question["created"]
-    created = Date.parse(question["created"]).to_time
+    created = Time.parse(question["created"])
     logger.debug "QUESTION created:" + created.to_i.to_s
     question["created"] = created
     if created < MIN_DATE
