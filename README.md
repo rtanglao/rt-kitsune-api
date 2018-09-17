@@ -3,6 +3,42 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 16september2018
 
+### 16september2018 remove machine and operating system tags raw R Studio
+
+```r
+tags_gt10_remove_common_tags <-
+tags_count_gt_10 %>%
+filter(tag != "desktop" &
+tag != "escalate" &
+tag != "beta" &
+tag != "esr" &
+tag != "firefox-520" &
+tag != "firefox-600" &
+tag != "firefox-610" &
+tag != "firefox-6102" &
+tag != "firefox-620" &
+tag != "firefox-630" &
+tag != "firefox-linux" &
+tag != "mac-os" &
+tag != "needsinfo" &
+tag != "other" &
+tag != "rolandff62experiment" &
+tag != "windows-10" &
+tag != "windows-7" &
+tag != "windows-81" &
+tag != "windows-xp" )
+View(tags_with_counts)
+View(tags_gt10_remove_common_tags)
+p3 = ggplot(data=tags_gt10_remove_common_tags, aes(x=tag, y=n))
+p3 = p3 + geom_bar(stat = "identity")
+p3 = p3 + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+p3
+```
+
+Output:
+
+
+
 ### 16september2018 raw R Studio
 
 ```r
