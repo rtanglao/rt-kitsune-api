@@ -25,7 +25,6 @@ tags_with_counts <-
 tags %>%
 group_by(tag) %>%
 count()
-View(tags_with_counts)
 tags_count_gt_10 <-
 tags_with_counts %>%
 filter(n >10)
@@ -34,25 +33,23 @@ p2 = p2 + geom_bar()
 p2
 p2 = p2 + geom_bar(stat="identity")
 p2
-View(tags_count_gt_10)
 tags_count_gt_10 <- tags_count_gt_10 %>% arrange(n)
-View(tags_count_gt_10)
 p2 = ggplot(data=tags_count_gt_10, aes(x=tag))
 p2 = p2 + geom_bar()
-p2
 p2 = p2 + geom_bar(stat="identity")
-p2
 p2 = p2 + geom_bar()
 p2 = ggplot(data=tags_count_gt_10, aes(x=tag))
 p2 = p2 + geom_bar(stat="identity")
-p2
-View(tags_count_gt_10)
 p2 = ggplot(data=tags_count_gt_10, aes(x=tag, y=n))
 p2 = p2 + geom_bar(stat="identity")
-p2
 p2 = p2 + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 p2
 ```
+
+Output:
+
+![ All SUMO AAQ tags for the first week of Firefox Desktop 62 i.e. September 5-11, 2018](https://github.com/rtanglao/rt-kitsune-api/blob/master/sumo-firefox-desktop-62-week1-05-11september2018-all-tags-count-gt-10-Rplot02.png)
+
 ### 16september2018 get tags for week 1 of firefox 62 for desktop
 
 ```bash
