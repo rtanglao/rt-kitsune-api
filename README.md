@@ -5,6 +5,10 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ### 16september2018 remove machine and operating system tags raw R Studio
 
+* the following can be done more concisely with:
+```  filter(str_detect(rowname, "Merc|Toy"))```
+see: https://sebastiansauer.github.io/dplyr_filter/ for full details
+
 ```r
 tags_gt10_remove_common_tags <-
 tags_count_gt_10 %>%
