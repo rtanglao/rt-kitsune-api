@@ -37,6 +37,7 @@ p3
 
 Output:
 
+![Week 1 Firefox 62 Desktop SUMO Forum desktop tags with all operating system tags removed](https://github.com/rtanglao/rt-kitsune-api/blob/master/Operating%20System%20tags%20removed%20for%20the%20first%20week%20of%20Firefox%20Desktop%2062%20i.e.%20September%205-11Rplot02.png)
 
 
 ### 16september2018 raw R Studio
