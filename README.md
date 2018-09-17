@@ -8,7 +8,6 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 ```r
 install.packages("ggplot2")
 library(ggplot2)
-tags = read.csv(file = "https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/16september2018-tags-5-11september2018.csv")
 tags = read.csv(file = "https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/16september2018-tags-5-11september2018.csv", stringsAsFactors = F)
 p = ggplot(data=tags, aes(x=tag), stat="count")
 p = ggplot(data=tags, aes(x=tag))
