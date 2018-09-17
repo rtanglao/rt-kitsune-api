@@ -2,6 +2,58 @@
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 16september2018
+
+### 16september2018 raw R Studio
+
+```r
+install.packages("ggplot2")
+library(ggplot2)
+tags = read.csv(file = "https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/16september2018-tags-5-11september2018.csv")
+tags = read.csv(file = "https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/16september2018-tags-5-11september2018.csv", stringsAsFactors = F)
+p = ggplot(data=tags, aes(x=tag), stat="count")
+p = ggplot(data=tags, aes(x=tag))
+p= p + geom_bar(stat="count"
+p
+p= p + geom_bar(stat="count")
+p
+tags_with_counts <-
+tags %>%
+group_by(tag) %>%
+count()
+install.packages("tidyverse")
+library(tidyverse)
+tags_with_counts <-
+tags %>%
+group_by(tag) %>%
+count()
+View(tags_with_counts)
+tags_count_gt_10 <-
+tags_with_counts %>%
+filter(n >10)
+p2 = ggplot(data=tags_count_gt_10, aes(x=tags))
+p2 = p2 + geom_bar()
+p2
+p2 = p2 + geom_bar(stat="identity")
+p2
+View(tags_count_gt_10)
+tags_count_gt_10 <- tags_count_gt_10 %>% arrange(n)
+View(tags_count_gt_10)
+p2 = ggplot(data=tags_count_gt_10, aes(x=tag))
+p2 = p2 + geom_bar()
+p2
+p2 = p2 + geom_bar(stat="identity")
+p2
+p2 = p2 + geom_bar()
+p2 = ggplot(data=tags_count_gt_10, aes(x=tag))
+p2 = p2 + geom_bar(stat="identity")
+p2
+View(tags_count_gt_10)
+p2 = ggplot(data=tags_count_gt_10, aes(x=tag, y=n))
+p2 = p2 + geom_bar(stat="identity")
+p2
+p2 = p2 + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+p2
+```
 ### 16september2018 get tags for week 1 of firefox 62 for desktop
 
 ```bash
