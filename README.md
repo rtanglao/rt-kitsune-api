@@ -1,6 +1,23 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 17september2018
+### 17september2018 how to read a file of tags and collapse
+
+* test.txt has:
+```
+rolandff62experiment
+ff62
+
+```
+
+```r
+test.txt <- read.table("machine-tags.txt") # with new line at end of file!
+> paste(test.txt[,1],collapse="|")
+[1] "rolandff62experiment|ff62"
+```
+
+
 ## 16september2018
 
 ### 16september2018 remove machine and operating system tags raw R Studio
