@@ -20,7 +20,7 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 ```r
 os_tags <-
 read_csv("
-  https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/16september2018-tags-5-11september2018.csv") 
+  https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/FF62_WEEK1/16september2018-tags-5-11september2018.csv") 
   %>%
     filter(
       grepl("^windows-", tag) |
@@ -85,7 +85,7 @@ p3
 
 Output:
 
-![Week 1 Firefox 62 Desktop SUMO Forum desktop tags with all operating system tags removed](https://github.com/rtanglao/rt-kitsune-api/blob/master/FF62_Week1/Operating%20System%20tags%20removed%20for%20the%20first%20week%20of%20Firefox%20Desktop%2062%20i.e.%20September%205-11Rplot02.png)
+![Week 1 Firefox 62 Desktop SUMO Forum desktop tags with all operating system tags removed](https://github.com/rtanglao/rt-kitsune-api/blob/master/FF62_WEEK1/Operating%20System%20tags%20removed%20for%20the%20first%20week%20of%20Firefox%20Desktop%2062%20i.e.%20September%205-11Rplot02.png)
 
 
 ### 16september2018 raw R Studio
@@ -93,7 +93,7 @@ Output:
 ```r
 install.packages("ggplot2")
 library(ggplot2)
-tags = read.csv(file = "https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/16september2018-tags-5-11september2018.csv", stringsAsFactors = F)
+tags = read.csv(file = "https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master//FF62_WEEK1/16september2018-tags-5-11september2018.csv", stringsAsFactors = F)
 p = ggplot(data=tags, aes(x=tag), stat="count")
 p = ggplot(data=tags, aes(x=tag))
 p= p + geom_bar(stat="count"
@@ -133,7 +133,7 @@ p2
 
 Output:
 
-![ All SUMO AAQ tags for the first week of Firefox Desktop 62 i.e. September 5-11, 2018](https://github.com/rtanglao/rt-kitsune-api/blob/master/sumo-firefox-desktop-62-week1-05-11september2018-all-tags-count-gt-10-Rplot02.png)
+![ All SUMO AAQ tags for the first week of Firefox Desktop 62 i.e. September 5-11, 2018](https://github.com/rtanglao/rt-kitsune-api/blob/master//FF62_WEEK1/sumo-firefox-desktop-62-week1-05-11september2018-all-tags-count-gt-10-Rplot02.png)
 
 ### 16september2018 get tags for week 1 of firefox 62 for desktop
 
