@@ -79,7 +79,8 @@ url = "https://support.mozilla.org/api/2/question/"
 end_program = false
 question_number = 0
   
-while !end_program 
+while !end_program
+  sleep(0.5) # sleep half second between API calls
   questions  = getKitsuneResponse(url, url_params)
   url = questions["next"]
   logger.debug "next url:" + url
