@@ -1,6 +1,19 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 22september2018 
+### 22september2018 how to open browser from wsl
+
+* in bash:
+```bash
+export BROWSER='/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe'
+```
+* and then in ruby launchy just works:
+```ruby
+require 'launchy'
+Launchy.open("https://support.mozilla.org")
+```
+
 ## 17september2018
 
 ### 17september2018 mongodb query to get questions for Thursday13Sept-Sat15Sept2018
