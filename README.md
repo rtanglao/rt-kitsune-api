@@ -2,7 +2,8 @@
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 22september2018 
-### 22september2018 how to open browser from wsl
+### 22september2018 how to open browser from wsl i.e. my previous blog post was wrong, no selenium server required
+* blog post: http://rolandtanglao.com/2018/09/22/p1-launchy-works-on-wsl-if-you-set-browser-environment-variable/
 
 * in bash:
 ```bash
