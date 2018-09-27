@@ -1,3 +1,6 @@
+# the following code was run in R Studio
+# and the output png from R Studio is here:
+# https://github.com/rtanglao/rt-kitsune-api/blob/master/FF62_WEEK1_TO_3/operating-systems-ff62-desktop-first3weeks-5-25september2018.png
 library(tidyverse)
 week1_to_week3_os_tags <-
   read_csv(
