@@ -11,6 +11,10 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
  2018 9 18 2 >FF62_WEEK1_TO_3/26september2018-tags-12-18september2018.csv
 ./print-csv-tags-unixtime-weeknumber.rb 2018 9 19 \
  2018 9 25 3 >FF62_WEEK1_TO_3/26september2018-tags-19-25september2018.csv
+cat 26september2018-tags-05-11september2018.csv \
+26september2018-tags-12-18september2018.csv \
+26september2018-tags-19-25september2018.csv > 26september2018-week1-week3-weeknumber-tags.csv
+vi 26september2018-week1-week3-weeknumber-tags.csv and remove the headers at beginning of week 2 and week 3
 ```
 
 ### 26september2018 get the tags
