@@ -1,9 +1,18 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 27september2018
+### 27september2018 run r code to get tag graph
+
+* https://github.com/rtanglao/rt-kitsune-api/blob/master/FF62_WEEK1_TO_3/ff62-desktop-5-25september2018-gt10-common-tags-removed.r
+
+Output:
+
+![ff62-week1-week3-5-25september2018-gt10-tags-os-firefox-tags-removed.png](https://github.com/rtanglao/rt-kitsune-api/raw/master/FF62_WEEK1_TO_3/ff62-week1-week3-5-25september2018-gt10-tags-os-firefox-tags-removed.png)
+
 ## 26september2018
 
-### 26septembe2018 run r code to get the Operating System graph
+### 26september2018 run r code to get the Operating System graph
 
 * https://github.com/rtanglao/rt-kitsune-api/blob/master/FF62_WEEK1_TO_3/ff62-desktop-operating-system-first-3-weeks.r
 
