@@ -2,6 +2,15 @@
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 26september2018
+
+### 26septembe2018 run r code to get the Operating System graph
+
+* https://github.com/rtanglao/rt-kitsune-api/blob/master/FF62_WEEK1_TO_3/ff62-desktop-operating-system-first-3-weeks.r
+
+Output:
+
+![operating-systems-ff62-desktop-first3weeks-5-25september2018.png](https://github.com/rtanglao/rt-kitsune-api/raw/master/FF62_WEEK1_TO_3/operating-systems-ff62-desktop-first3weeks-5-25september2018.png)
+
 ### 26september2018 get the tags by week
 
 ```bash
@@ -37,7 +46,7 @@ require 'launchy'
 Launchy.open("https://support.mozilla.org")
 ```
 
-## 17september2018
+## 17september201!
 
 ### 17september2018 mongodb query to get questions for Thursday13Sept-Sat15Sept2018
 
