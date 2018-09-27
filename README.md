@@ -5,7 +5,10 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 ### 26september2018 get the tags by week
 
 ```bash
-./print-csv-tags-unixtime-weeknumber.rb 2018 9 5 2018 9 11 1 >FF62_WEEK1_TO_3/26september2018-tags-05-11september2018.csv
+./print-csv-tags-unixtime-weeknumber.rb 2018 9 5 \
+2018 9 11 1 >FF62_WEEK1_TO_3/26september2018-tags-05-11september2018.csv
+ ./print-csv-tags-unixtime-weeknumber.rb 2018 9 12 \
+ 2018 9 18 2 >FF62_WEEK1_TO_3/26september2018-tags-12-18september2018.csv
 ```
 
 ### 26september2018 get the tags
