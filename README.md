@@ -39,6 +39,11 @@ week1_to_week3_os_line_plot = week1_to_week3_os_line_plot +
     'windows-xp' = 'dark green')) +
   labs(color = 'FF62 OS 5-25Sep2018')
 ```
+
+Graph:
+
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/roland/30018293677/in/dateposted-public/" title="Firefox 62 Desktop Operating System SUMO Questions 5-25 September2018"><img src="https://farm2.staticflickr.com/1964/30018293677_eddcb2aab6_n.jpg" width="199" height="320" alt="Firefox 62 Desktop Operating System SUMO Questions 5-25 September2018"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
 ### 27september2018 run r code to get tag graph
 
 * https://github.com/rtanglao/rt-kitsune-api/blob/master/FF62_WEEK1_TO_3/ff62-desktop-5-25september2018-gt10-common-tags-removed.r
