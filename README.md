@@ -1,6 +1,13 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 26september2018
+### 26september2018 get the tags
+```bash
+mkdir FF62_WEEK1_TO_3
+ ./print-csv-tags-unixtime.rb 2018 9 5 2018 9 25 >FF62_WEEK1_TO_3/26september2018-tags-05-25september2018.csv
+```
+
 ## 22september2018 
 ### 22september2018 how to open browser from wsl i.e. my previous blog post was wrong, no selenium server required
 * blog post: http://rolandtanglao.com/2018/09/22/p1-launchy-works-on-wsl-if-you-set-browser-environment-variable/
