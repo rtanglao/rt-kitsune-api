@@ -4580,7 +4580,6 @@ id,tag,unixtime,week
 1233429,rolandff62experiment,1536734678,1
 1233429,calendar,1536734678,1
 1233429,osxcalendar,1536734678,1
-id,tag,unixtime,week
 1233395,other,1536754203,2
 1233395,desktop,1536754203,2
 1233395,rolandff62experiment,1536754203,2
@@ -8107,7 +8106,6 @@ id,tag,unixtime,week
 1234425,desktop,1537339224,2
 1234425,windows-10,1537339224,2
 1234425,rolandff62experiment,1537339224,2
-id,tag,unixtime,week
 1234431,privacy-and-security_1,1537344757,3
 1234431,firefox-620,1537344757,3
 1234431,desktop,1537344757,3
