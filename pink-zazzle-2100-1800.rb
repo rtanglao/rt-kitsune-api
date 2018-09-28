@@ -19,6 +19,9 @@ png = ChunkyPNG::Image.new(
   ChunkyPNG::Color::TRANSPARENT
 )
 
+#white = "FFFFFF"
+#components =  white.scan(/.{2}/),  3 element array
+#puts components
 def get_pink(c)
   zero_to_3 = c % 4
   #[0xf7f4f9,0xe7e1ef, 0xd4b9da,0xc994c7,0xdf65b0,0x7298a,0xce1256,0x980043,0x67001f]
