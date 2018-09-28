@@ -1,6 +1,13 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 28september2018
+### 28sptember2018 backup the database from september 26
+
+```bash
+mongodump --archive=26september2018ff62questions.gz --gzip --db ff62questions --collection questions
+```
+ 
 ## 27september2018
 
 ## 27september2018 run r code to get line graph of os
