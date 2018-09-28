@@ -21,6 +21,7 @@ png = ChunkyPNG::Image.new(
 
 def get_pink(c)
   zero_to_3 = c % 4
+  #[0xf7f4f9,0xe7e1ef, 0xd4b9da,0xc994c7,0xdf65b0,0x7298a,0xce1256,0x980043,0x67001f]
   case zero_to_3
   when 0
     return 'pink' #'pink @ 0.25'
