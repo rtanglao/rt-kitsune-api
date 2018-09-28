@@ -1,3 +1,5 @@
+# output: 
+# https://github.com/rtanglao/rt-kitsune-api/raw/master/FF62_WEEK1_TO_3/Firefox%2062%20Desktop%20Operating%20System%20SUMO%20Questions%205-25%20September2018.png
 library(tidyverse)
 week1_to_week3_os_tags <-
   read_csv(
