@@ -80,12 +80,12 @@ questionsColl.find(:created =>
     "title" => 1,
     "tags" => 1
   }).each do |q|
+    logger.debug q.ai
     id = q["id"]
     title = q["title"]
     content = q["content"]
     int_array = title.each_char.map(&:ord) + content.each_char.map(&:ord)
     tags = q["tags"]
-    ap tags
     tags.each {|t| int_array += t["slug"].each_char.map(&:ord)}
     int_array.each do |c|
       column += 1
