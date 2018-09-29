@@ -77,13 +77,15 @@ questionsColl.find(:created =>
   {
     "id" => 1,
     "content" => 1,
-    "title" => 1
+    "title" => 1,
+    "tags" => 1
   }).each do |q|
     id = q["id"]
     title = q["title"]
     content = q["content"]
-
     int_array = title.each_char.map(&:ord) + content.each_char.map(&:ord)
+    tags = q["tags"]
+    tags.each {|t| int_array += t["slug"].each_char.map(&:ord)}
     int_array.each do |c|
       column += 1
       if column == ZAZZLE_WIDTH
