@@ -85,6 +85,7 @@ questionsColl.find(:created =>
     content = q["content"]
     int_array = title.each_char.map(&:ord) + content.each_char.map(&:ord)
     tags = q["tags"]
+    ap tags
     tags.each {|t| int_array += t["slug"].each_char.map(&:ord)}
     int_array.each do |c|
       column += 1
