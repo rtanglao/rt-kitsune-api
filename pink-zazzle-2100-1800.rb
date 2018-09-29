@@ -23,7 +23,8 @@ palette_rgb = []
 palette_9 = ["f7f4f9","e7e1ef", "d4b9da","c994c7","df65b0","7298a","ce1256","980043","67001f"]
 palette_9.each do |c|
   components =  c.scan(/.{2}/)
-  palette_rgb.push([components[0].hex, components[1].hex, components[2].hex])
+  rgb = [components[0].hex, components[1].hex, components[2].hex]
+  palette_rgb.push(rgb)
 end
 ap palette_rgb
 exit
