@@ -98,7 +98,8 @@ questionsColl.find(:created =>
       logger.debug "COLUMN:" + column.to_s
       logger.debug "C:" + c.to_s
       logger.debug "PINK:" + get_pink(c)
-      png[column,row] = ChunkyPNG::Color(get_pink(palette_rgb, c))
+      colour_rgb = get_pink(palette_rgb, c)
+      png[column,row] = ChunkyPNG::Color.rgb(colour_rgb[0], colour_rgb[1], colour_rgb[2])
     end
     break if exit_program
 end
