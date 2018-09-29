@@ -28,7 +28,7 @@ palette_9.each do |c|
 end
 logger.debug palette_rgb.ai
 
-def get_pink(rgb, c)
+def get_colour(rgb, c)
   return rgb[c % 9]
 end
   
@@ -54,17 +54,17 @@ if MONGO_USER
   end
 end
 
-if ARGV.length < 6
-  puts "usage: #{$0} yyyy mm dd yyyy mm dd" # day you want to open
+if ARGV.length < 7
+  puts "usage: #{$0} yyyy mm dd yyyy mm dd filename" # day you want to open
   exit
 end
 
 questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
+FILENAME = ARGV[6]
 
-num_pixels = 0
-column = -1
+column = 0
 row = 0
 exit_program = false
 questionsColl.find(:created =>
@@ -88,23 +88,26 @@ questionsColl.find(:created =>
     tags = q["tags"]
     tags.each {|t| int_array += t["slug"].each_char.map(&:ord)}
     int_array.each do |c|
-      column += 1
-      if column == ZAZZLE_WIDTH
-        column = 1
-        row += 1
-      end
-      if row == ZAZZLE_HEIGHT
-        exit_program = true
-        break
-      end
+      
       logger.debug "ROW:" + row.to_s
       logger.debug "COLUMN:" + column.to_s
       logger.debug "C:" + c.to_s
-      colour_rgb = get_pink(palette_rgb, c)
-      logger.debug "PINK:" + colour_rgb.ai
-      png[column,row] = ChunkyPNG::Color.rgb(colour_rgb[0], colour_rgb[1], colour_rgb[2])
+      colour_rgb = get_colour(palette_rgb, c)
+      logger.debug "COLOUR:" + colour_rgb.ai
+      for col_offset in 0..9 do
+        png[column + col_offset, row] = ChunkyPNG::Color.rgb(colour_rgb[0], colour_rgb[1], colour_rgb[2])
+      end
+    end
+    column += 10
+    if column == ZAZZLE_WIDTH
+      column = 0
+      row += 1
+    end
+    if row == ZAZZLE_HEIGHT
+      exit_program = true
+      break
     end
     break if exit_program
 end
   
-png.save('pink.png', :interlace => true)
+png.save(FILENAME, :interlace => true)
