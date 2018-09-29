@@ -19,26 +19,21 @@ png = ChunkyPNG::Image.new(
   ChunkyPNG::Color::TRANSPARENT
 )
 
-#white = "FFFFFF"
-#components =  white.scan(/.{2}/),  3 element array
-#puts components
-def get_pink(c)
-  zero_to_3 = c % 4
-  #[0xf7f4f9,0xe7e1ef, 0xd4b9da,0xc994c7,0xdf65b0,0x7298a,0xce1256,0x980043,0x67001f]
-  case zero_to_3
-  when 0
-    return 'pink' #'pink @ 0.25'
-  when 1
-    return 'green' #'pink @ 0.50'
-  when 2
-    return 'blue' #'pink @ 0.75'
-  when 3
-    return 'orange' #'pink @ 1.0'
-  end
+palette_rgb = []
+palette_9 = ["f7f4f9","e7e1ef", "d4b9da","c994c7","df65b0","7298a","ce1256","980043","67001f"]
+palette_9.each do |c|
+  components =  c.scan(/.{2}/)
+  palette_rgb.push([components[0].hex, components[1].hex, components[2].hex])
+end
+ap palette_rgb
+exit
+
+def get_pink(rgb, c)
+  return rgb[c % 9]
 end
   
 MONGO_HOST = ENV["MONGO_HOST"]
-xfraise(StandardError,"Set Mongo hostname in ENV: 'MONGO_HOST'") if !MONGO_HOST
+raise(StandardError,"Set Mongo hostname in ENV: 'MONGO_HOST'") if !MONGO_HOST
 MONGO_PORT = ENV["MONGO_PORT"]
 raise(StandardError,"Set Mongo port in ENV: 'MONGO_PORT'") if !MONGO_PORT
 MONGO_USER = ENV["MONGO_USER"]
@@ -103,7 +98,7 @@ questionsColl.find(:created =>
       logger.debug "COLUMN:" + column.to_s
       logger.debug "C:" + c.to_s
       logger.debug "PINK:" + get_pink(c)
-      png[column,row] = ChunkyPNG::Color(get_pink(c))
+      png[column,row] = ChunkyPNG::Color(get_pink(palette_rgb, c))
     end
     break if exit_program
 end
