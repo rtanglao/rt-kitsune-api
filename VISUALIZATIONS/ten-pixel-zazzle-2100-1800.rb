@@ -97,16 +97,16 @@ questionsColl.find(:created =>
       for col_offset in 0..9 do
         png[column + col_offset, row] = ChunkyPNG::Color.rgb(colour_rgb[0], colour_rgb[1], colour_rgb[2])
       end
-    end
-    column += 10
-    if column == ZAZZLE_WIDTH
-      column = 0
-      row += 1
-    end
-    if row == ZAZZLE_HEIGHT
-      exit_program = true
-      break
-    end
+      column += 10
+      if column == ZAZZLE_WIDTH
+        column = 0
+        row += 1
+      end 
+      if row == ZAZZLE_HEIGHT
+        exit_program = true
+        break
+      end 
+    end 
     break if exit_program
 end
   
