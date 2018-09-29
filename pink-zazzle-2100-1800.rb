@@ -22,13 +22,11 @@ png = ChunkyPNG::Image.new(
 palette_rgb = []
 palette_9 = ['a6cee3','1f78b4','b2df8a','33a02c','fb9a99','e31a1c','fdbf6f','ff7f00','cab2d6']
 palette_9.each do |c|
-  ap c
   components =  c.scan(/.{2}/)
-  ap components
   rgb = [components[0].hex, components[1].hex, components[2].hex]
   palette_rgb.push(rgb)
 end
-ap palette_rgb
+logger.debug palette_rgb.ai
 
 def get_pink(rgb, c)
   return rgb[c % 9]
