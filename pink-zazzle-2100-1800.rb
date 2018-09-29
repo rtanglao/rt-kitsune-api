@@ -29,7 +29,6 @@ palette_9.each do |c|
   palette_rgb.push(rgb)
 end
 ap palette_rgb
-exit
 
 def get_pink(rgb, c)
   return rgb[c % 9]
