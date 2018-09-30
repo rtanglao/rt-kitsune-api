@@ -5,6 +5,8 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 ## 29september2018 visualizations
 
 ```bash
+mkdir VISUALIZATIONS
+cd !$
 ./ten-pixel-zazzle-2100-1800.rb 2018 9 5 2018 9 25 tenpixel.png
 ./ten-pixel-sequential-purple-zazzle-2100-1800.rb 2018 9 5 2018 9 25 ff62-5-25September2018-ten-pixel-sequential-purple-ish.png
 ./ten-pixel-single-red-zazzle-2100-1800.rb 2018 9 5 2018 9 25 ff62-5-25September2018-ten-pixel-single-red.png
