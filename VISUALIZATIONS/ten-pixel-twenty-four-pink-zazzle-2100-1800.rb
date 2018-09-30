@@ -20,8 +20,33 @@ png = ChunkyPNG::Image.new(
 )
 
 palette_rgb = []
-palette_9 = ['fff5f0','fee0d2','fcbba1','fc9272','fb6a4a','ef3b2c','cb181d','a50f15','67000d']
-palette_9.each do |c|
+palette_24 = [
+  'FDAB9F',
+  'DF5286',
+  'FE5BAC',
+  'F987C5',
+  'F19CBB',
+  'fb607f',
+  'fca3b7',
+  'de6fa1',
+  'de3163',
+  'ec5578',
+  'e0115f',
+  'ff00ff',
+  'fe7f9c',
+  'f5c3c2',
+  'ff69b4',
+  'fbaed2',
+  'ff66cc',
+  'ff0090',
+  'ffa6c9',
+  'fdb9c8',
+  'ff6fff',
+  'f64a8a',
+  'f81894',
+  'fc0fc0'
+  ]
+palette_24.each do |c|
   components =  c.scan(/.{2}/)
   rgb = [components[0].hex, components[1].hex, components[2].hex]
   palette_rgb.push(rgb)
@@ -29,7 +54,7 @@ end
 logger.debug palette_rgb.ai
 
 def get_colour(rgb, c)
-  return rgb[c % 9]
+  return rgb[c % 24]
 end
   
 MONGO_HOST = ENV["MONGO_HOST"]
