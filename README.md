@@ -1,6 +1,16 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 29september2018
+## 29september2018 visualizations
+
+```bash
+./ten-pixel-zazzle-2100-1800.rb 2018 9 5 2018 9 25 tenpixel.png
+./ten-pixel-sequential-purple-zazzle-2100-1800.rb 2018 9 5 2018 9 25 ff62-5-25September2018-ten-pixel-sequential-purple-ish.png
+./ten-pixel-single-red-zazzle-2100-1800.rb 2018 9 5 2018 9 25 ff62-5-25September2018-ten-pixel-single-red.png
+./ten-pixel-twenty-four-pink-zazzle-2100-1800.rb 2018 9 5 2018 9 25 ff62-5-25September2018-ten-pixel-twenty-four-pink.png
+```
+
 ## 28september2018
 ### 28sptember2018 backup the database from september 26
 
