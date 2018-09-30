@@ -20,6 +20,7 @@ png = ChunkyPNG::Image.new(
 )
 
 palette_rgb = []
+# following palette is from: https://graf1x.com/24-shades-of-pink-color-palette/
 palette_24 = [
   'FDAB9F',
   'DF5286',
