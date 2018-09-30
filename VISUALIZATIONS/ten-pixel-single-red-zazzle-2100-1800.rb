@@ -20,7 +20,7 @@ png = ChunkyPNG::Image.new(
 )
 
 palette_rgb = []
-palette_9 = ['fff7f3','fde0dd','fcc5c0','fa9fb5','f768a1','dd3497','ae017e','7a0177','49006a']
+palette_9 = ['fff5f0','fee0d2','fcbba1','fc9272','fb6a4a','ef3b2c','cb181d','a50f15','67000d']
 palette_9.each do |c|
   components =  c.scan(/.{2}/)
   rgb = [components[0].hex, components[1].hex, components[2].hex]
