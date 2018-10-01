@@ -1,6 +1,14 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 01october2018
+### 01october2018 fix operating system graph to clearly label lines using r package directlabels
+* code: 
+  * https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/01october2018-ff62-operating-system-directlabels.r
+* output:
+
+![01october2018-ff62-operating-system-directlabels-Rplot13.png](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/01october2018-ff62-operating-system-directlabels-Rplot13.png)
+
 ## 29september2018
 ## 29september2018 visualizations
 
