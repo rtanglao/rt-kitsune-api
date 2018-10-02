@@ -57,6 +57,7 @@ CSV.open(FILENAME, 'w', write_headers: true, headers: headers) do |csv|
     "tags" => 1,
     "created" => 1,
     "content" => 1,
+    "title" =>1,
     "product" => 1,
     "topic" => 1    
   }).each do |q|
