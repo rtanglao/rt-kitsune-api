@@ -40,7 +40,7 @@ end
 questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
-FILENAM<E = ARGV[6]
+FILENAME = ARGV[6]
 
 headers = ['id', 'created', 'title', 'content', 'tags', 'product', 'topic']
 CSV.open(FILENAME, 'w', write_headers: true, headers: headers) do |csv|
