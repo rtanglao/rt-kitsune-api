@@ -43,7 +43,9 @@ MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may wa
 week = ARGV[6]
 
 #print "id,tag,unixtime,week\n"
-questionsColl.find(:created =>
+headers = ['id', 'created', 'title', 'content', 'tags', 'product', 'topic']
+CSV.open('data.csv', 'w', write_headers: true, headers: headers) do |csv|
+  questionsColl.find(:created =>
   {
     :$gte => MIN_DATE,
     :$lte => MAX_DATE },
@@ -58,11 +60,11 @@ questionsColl.find(:created =>
     "product" => 1,
     "topic" => 1    
   }).each do |q|
-  id = q["id"]
-
-  logger.debug "QUESTION id:" + id.to_s
-  tags = q["tags"]
-  tag_str = ""      
-  tags.each { |t| tag_str = tag_str + t["slug"] + ";"   }
+    id = q["id"]
+    logger.debug "QUESTION id:" + id.to_s
+    tags = q["tags"]
+    tag_str = ""      
+    tags.each { |t| tag_str = tag_str + t["slug"] + ";"   }
+    csv << [id, q["created"], q["title"], q["content"], tag_str, q["product"], q["topic"]
   end
 end
