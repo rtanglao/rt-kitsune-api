@@ -5,6 +5,10 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ### 01october2018 get csv for word cloud
 
+output:
+
+https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/5-25september-ff-desktop-questions-id-content-created-product-tags-title-topic.csv
+
 ```bash
  ./print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic.rb \
  2018 9 5 2018 9 25 \
