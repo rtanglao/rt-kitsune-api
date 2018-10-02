@@ -6,6 +6,7 @@ require 'time'
 require 'date'
 require 'mongo'
 require 'logger'
+require 'csv'
 
 logger = Logger.new(STDERR)
 logger.level = Logger::DEBUG
