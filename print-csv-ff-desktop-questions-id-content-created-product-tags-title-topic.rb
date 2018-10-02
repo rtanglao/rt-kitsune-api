@@ -65,6 +65,6 @@ CSV.open(FILENAME, 'w', write_headers: true, headers: headers) do |csv|
     tags = q["tags"]
     tag_str = ""      
     tags.each { |t| tag_str = tag_str + t["slug"] + ";"   }
-    csv << [id, q["created"], q["title"], q["content"], tag_str, q["product"], q["topic"]]
+    csv << [id, q["created"].to_i.to_s, q["title"], q["content"], tag_str, q["product"], q["topic"]]
   end
 end
