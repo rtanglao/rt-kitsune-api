@@ -3,6 +3,17 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 01october2018
 
+### 01october2018 variety at level 1
+
+```bash
+ mongo ff62questions --eval "var collection = 'questions', maxDepth=1, lastValue = true" variety.js
+```
+
+```
+
+```
+
+
 ### 01october2018 use variety to see what should go into a csv file
 
 ```bash
