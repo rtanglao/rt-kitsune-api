@@ -42,7 +42,7 @@ MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want
 MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
 week = ARGV[6]
 
-print "id,tag,unixtime,week\n"
+#print "id,tag,unixtime,week\n"
 questionsColl.find(:created =>
   {
     :$gte => MIN_DATE,
@@ -53,15 +53,16 @@ questionsColl.find(:created =>
   {
     "id" => 1,
     "tags" => 1,
-    "created" => 1
+    "created" => 1,
+    "content" => 1,
+    "product" => 1,
+    "topic" => 1    
   }).each do |q|
   id = q["id"]
 
   logger.debug "QUESTION id:" + id.to_s
   tags = q["tags"]
-
-  tags.each do |t|
-    print id.to_s + "," + t["slug"] + "," + q["created"].to_i.to_s + "," + week + "\n"
+  tag_str = ""      
+  tags.each { |t| tag_str = tag_str + t["slug"] + ";"   }
   end
 end
-
