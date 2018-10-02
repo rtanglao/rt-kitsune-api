@@ -14,7 +14,7 @@ week1_to_week3_os_tags <-
   mutate(os=ifelse(grepl("^windows-", tag), "windows", tag)) %>% 
   mutate(os=ifelse(grepl("^mac-os", tag), "mac-os", tag)) %>% 
   filter(tag != "windows-active-directory") %>% 
-group_by(os, week) %>%
+  group_by(os, week) %>%
   count()
 label_at_end_week1_to_week3_os_line_plot <-
   ggplot(data=week1_to_week3_os_tags, aes(
@@ -25,4 +25,3 @@ label_at_end_week1_to_week3_os_line_plot = label_at_end_week1_to_week3_os_line_p
   scale_x_discrete(limits = c("1", "2", "3")) +
   geom_dl(aes(label = os), method = list(dl.trans(x = x + 0.2), "last.points", cex = 0.8)) +
   geom_dl(aes(label = os), method = list(dl.trans(x = x - 0.2), "first.points", cex = 0.8))
-
