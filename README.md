@@ -2,6 +2,68 @@
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 01october2018
+
+### 01october2018 use variety to see what should go into a csv file
+
+```bash
+cd
+cd GIT
+git clone https://github.com/variety/variety.git
+cd variety
+sudo npm install
+mongo ff62questions --eval "var collection = 'questions'" variety.js
+```
+```
++------------------------------------------------------------------------------------------+
+| key                      | types                     | occurrences | percents            |
+| ------------------------ | ------------------------- | ----------- | ------------------- |
+| _id                      | ObjectId                  |        1866 | 100.000000000000000 |
+| answers                  | Array                     |        1866 | 100.000000000000000 |
+| content                  | String                    |        1866 | 100.000000000000000 |
+| created                  | Date                      |        1866 | 100.000000000000000 |
+| creator                  | Object                    |        1866 | 100.000000000000000 |
+| creator.avatar           | String                    |        1866 | 100.000000000000000 |
+| creator.display_name     | null (1721),String (145)  |        1866 | 100.000000000000000 |
+| creator.username         | String                    |        1866 | 100.000000000000000 |
+| id                       | Number                    |        1866 | 100.000000000000000 |
+| involved                 | Array                     |        1866 | 100.000000000000000 |
+| involved.XX.avatar       | String                    |        1866 | 100.000000000000000 |
+| involved.XX.display_name | null (1724),String (1708) |        1866 | 100.000000000000000 |
+| involved.XX.username     | String                    |        1866 | 100.000000000000000 |
+| is_archived              | Boolean                   |        1866 | 100.000000000000000 |
+| is_locked                | Boolean                   |        1866 | 100.000000000000000 |
+| is_solved                | Boolean                   |        1866 | 100.000000000000000 |
+| is_spam                  | Boolean                   |        1866 | 100.000000000000000 |
+| is_taken                 | Boolean                   |        1866 | 100.000000000000000 |
+| last_answer              | null (152),Number (1714)  |        1866 | 100.000000000000000 |
+| locale                   | String                    |        1866 | 100.000000000000000 |
+| metadata                 | Array                     |        1866 | 100.000000000000000 |
+| num_answers              | Number                    |        1866 | 100.000000000000000 |
+| num_votes                | Number                    |        1866 | 100.000000000000000 |
+| num_votes_past_week      | Number                    |        1866 | 100.000000000000000 |
+| product                  | String                    |        1866 | 100.000000000000000 |
+| solution                 | null (1412),Number (454)  |        1866 | 100.000000000000000 |
+| solved_by                | null (1412),Object (454)  |        1866 | 100.000000000000000 |
+| tags                     | Array                     |        1866 | 100.000000000000000 |
+| tags.XX.name             | String                    |        1866 | 100.000000000000000 |
+| tags.XX.slug             | String                    |        1866 | 100.000000000000000 |
+| taken_by                 | null                      |        1866 | 100.000000000000000 |
+| taken_until              | null                      |        1866 | 100.000000000000000 |
+| title                    | String                    |        1866 | 100.000000000000000 |
+| topic                    | String                    |        1866 | 100.000000000000000 |
+| updated                  | String                    |        1866 | 100.000000000000000 |
+| updated_by               | null (1722),Object (144)  |        1866 | 100.000000000000000 |
+| metadata.XX.name         | String                    |        1865 |  99.946409431939983 |
+| metadata.XX.value        | String                    |        1865 |  99.946409431939983 |
+| solved_by.avatar         | String                    |         454 |  24.330117899249732 |
+| solved_by.display_name   | String (377),null (77)    |         454 |  24.330117899249732 |
+| solved_by.username       | String                    |         454 |  24.330117899249732 |
+| updated_by.avatar        | String                    |         144 |   7.717041800643087 |
+| updated_by.display_name  | null (78),String (66)     |         144 |   7.717041800643087 |
+| updated_by.username      | String                    |         144 |   7.717041800643087 |
++------------------------------------------------------------------------------------------+
+```
+
 ### 01october2018 fix operating system graph to clearly label lines using r package directlabels
 * code: 
   * https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/01october2018-ff62-operating-system-directlabels.r
