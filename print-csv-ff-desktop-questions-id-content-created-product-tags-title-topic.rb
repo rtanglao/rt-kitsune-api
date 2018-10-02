@@ -33,18 +33,17 @@ if MONGO_USER
 end
 
 if ARGV.length < 7
-  puts "usage: #{$0} yyyy mm dd yyyy mm dd week_number" # week number is an integer e.g. "1"
+  puts "usage: #{$0} yyyy mm dd yyyy mm dd filename"
   exit
 end
 
 questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
-week = ARGV[6]
+FILENAM<E = ARGV[6]
 
-#print "id,tag,unixtime,week\n"
 headers = ['id', 'created', 'title', 'content', 'tags', 'product', 'topic']
-CSV.open('data.csv', 'w', write_headers: true, headers: headers) do |csv|
+CSV.open(FILENAME, 'w', write_headers: true, headers: headers) do |csv|
   questionsColl.find(:created =>
   {
     :$gte => MIN_DATE,
