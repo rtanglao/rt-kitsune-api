@@ -63,7 +63,7 @@ questionsColl.find(:created =>
   index = tags.index{ |t| t["slug"] == TAG}
   if !index.nil?
     number_of_tags += 1
-    puts "https://support.mozilla.org/questions" + id.to_s
+    puts "https://support.mozilla.org/questions/" + id.to_s
   else
     logger.debug "nil , i.e. tag:" + TAG + " NOT found" 
   end
