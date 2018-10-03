@@ -68,7 +68,7 @@ questionsColl.find(:created =>
     logger.debug "nil , i.e. tag:" + TAG + " NOT found" 
   end
 end
-  logger.debug "# of TAG:' + TAG + " for this time range"
+logger.debug "# of TAG:" + TAG + " for this time range"
  
   
 
