@@ -42,7 +42,7 @@ questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
 
-number_of_tbs_for_this_day = 0
+number_solved_for_this_time_period = 0
 questionsColl.find(:created =>
   {
     :$gte => MIN_DATE,
@@ -68,8 +68,11 @@ questionsColl.find(:created =>
   solution = q["solution"]  
   if solved_by_username != creator_username 
     Launchy.open("http://support.mozilla.org/questions/" + id.to_s + "#answer-" + solution.to_s)
-    exit
+    logger.debug "Solution URL:" + "http://support.mozilla.org/questions/" + id.to_s + "#answer-" + solution.to_s
+    number_solved_for_this_time_period += 1
     sleep(0.5)
   end
 end
+logger.debug "Number solved FROM:"  + ARGV[0] + ARGV[1] + ARGV[2] + "TO:" + ARGV[3] + ARGV[4] + ARGV[5] +
+            "is:" + number_solved_for_this_time_period.to_s
     
