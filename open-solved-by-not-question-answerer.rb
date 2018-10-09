@@ -33,16 +33,16 @@ if MONGO_USER
   end
 end
 
-if ARGV.length < 3
-  puts "usage: #{$0} yyyy mm dd" # day you want to open
+if ARGV.length < 6
+  puts "usage: #{$0} yyyy mm dd yyyy mm dd" # time range you want to open
   exit
 end
 
 questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
-MAX_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 23, 59) # may want Time.utc if you don't want local time
+MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
 
-number_of_tabs_for_this_day = 0
+number_of_tbs_for_this_day = 0
 questionsColl.find(:created =>
   {
     :$gte => MIN_DATE,
@@ -51,16 +51,25 @@ questionsColl.find(:created =>
   {"id"=> 1}
   ).projection(
   {
-    "id" => 1
+    "id" => 1,
+    "created" => 1,
+    "solved_by" => 1, 
+    "creator" => 1,
+    "solution" => 1 
   }).each do |q|
   id = q["id"]
-
-  number_of_tabs_for_this_day += 1
   logger.debug "QUESTION id:" + id.to_s
-  Launchy.open("http://support.mozilla.org/questions/" + id.to_s)
-  sleep(0.5)
+  creator_username = q["creator"]["username"]
+  logger.debug "creator_username:" + creator_username
+  solved_by = q["solved_by"]
+  next if solved_by.nil?
+  solved_by_username = solved_by["username"]
+  logger.debug "solved_by_username:" + solved_by_username
+  solution = q["solution"]  
+  if solved_by_username != creator_username 
+    Launchy.open("http://support.mozilla.org/questions/" + id.to_s + "#answer-" + solution.to_s)
+    exit
+    sleep(0.5)
+  end
 end
-  logger.debug "number of tabs for this day:" + number_of_tabs_for_this_day.to_s
-
-  
-
+    
