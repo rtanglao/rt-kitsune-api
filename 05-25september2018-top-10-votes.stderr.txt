@@ -1,0 +1,21 @@
+D, [2018-10-15T20:24:13.719966 #781] DEBUG -- : num_votes:9 id:1232817
+D, [2018-10-15T20:24:13.720121 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1232817
+/usr/local/lib/ruby/gems/2.5.0/gems/launchy-2.4.3/lib/launchy/application.rb:30: warning: Insecure world writable dir /mnt/c in PATH, mode 040777
+D, [2018-10-15T20:24:14.239409 #781] DEBUG -- : num_votes:7 id:1232882
+D, [2018-10-15T20:24:14.239558 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1232882
+D, [2018-10-15T20:24:14.763263 #781] DEBUG -- : num_votes:7 id:1233031
+D, [2018-10-15T20:24:14.763675 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1233031
+D, [2018-10-15T20:24:15.283464 #781] DEBUG -- : num_votes:5 id:1232863
+D, [2018-10-15T20:24:15.283611 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1232863
+D, [2018-10-15T20:24:15.802926 #781] DEBUG -- : num_votes:5 id:1232719
+D, [2018-10-15T20:24:15.803081 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1232719
+D, [2018-10-15T20:24:16.334161 #781] DEBUG -- : num_votes:5 id:1232694
+D, [2018-10-15T20:24:16.334302 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1232694
+D, [2018-10-15T20:24:16.857023 #781] DEBUG -- : num_votes:5 id:1232448
+D, [2018-10-15T20:24:16.857159 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1232448
+D, [2018-10-15T20:24:17.383731 #781] DEBUG -- : num_votes:4 id:1232837
+D, [2018-10-15T20:24:17.384042 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1232837
+D, [2018-10-15T20:24:17.909104 #781] DEBUG -- : num_votes:4 id:1232753
+D, [2018-10-15T20:24:17.909970 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1232753
+D, [2018-10-15T20:24:18.438027 #781] DEBUG -- : num_votes:4 id:1232360
+D, [2018-10-15T20:24:18.438432 #781] DEBUG -- : OPENING:http://support.mozilla.org/questions/1232360
