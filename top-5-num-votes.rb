@@ -33,15 +33,14 @@ if MONGO_USER
   end
 end
 
-if ARGV.length < 7
-  puts "usage: #{$0} yyyy mm dd yyyy mm dd tag"
+if ARGV.length < 6
+  puts "usage: #{$0} yyyy mm dd yyyy mm dd"
   exit
 end
 
 questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
-TAG = ARGV[6]
 
 number_of_tags = 0
 questionsColl.find(:created =>
@@ -49,26 +48,15 @@ questionsColl.find(:created =>
     :$gte => MIN_DATE,
     :$lte => MAX_DATE },
   ).sort(
-  {"id"=> 1}
+  {"num_votes" => -1}
   ).projection(
   {
-    "id" => 1,
-    "tags" => 1
-  }).each do |q|
+    "num_votes" => 1,
+    "id" => 1
+  }).limit(10).each do |q|
+
+  num_votes = q["num_votes"]
   id = q["id"]
-
-  logger.debug "QUESTION id:" + id.to_s
-  tags = q["tags"]
-
-  index = tags.index{ |t| t["slug"] == TAG}
-  if !index.nil?
-    number_of_tags += 1
-    puts "https://support.mozilla.org/questions/" + id.to_s
-  else
-    logger.debug "nil , i.e. tag:" + TAG + " NOT found" 
-  end
+  logger.debug "num_votes:" + num_votes.to_s + " id:", id._to_s
+  puts "https://support.mozilla.org/questions/" + id.to_s
 end
-logger.debug "# of TAG:" + TAG + " for this time range:" + number_of_tags.to_s
- 
-  
-
