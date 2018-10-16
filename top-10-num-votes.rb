@@ -58,5 +58,8 @@ questionsColl.find(:created =>
   num_votes = q["num_votes"]
   id = q["id"]
   logger.debug "num_votes:" + num_votes.to_s + " id:" + id.to_s
-  puts "https://support.mozilla.org/questions/" + id.to_s
+  top_10_url = "http://support.mozilla.org/questions/" + id.to_s
+  logger.debug "OPENING:" + top_10_url
+  Launchy.open(top_10_url)
+  sleep 0.5
 end
