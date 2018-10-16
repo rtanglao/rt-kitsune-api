@@ -4,7 +4,7 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 ## 15october2018
 ### 15october2018 num_votes
 
-* find out how many people have voted for a question and display the top 10 and open thme in the browser:
+* find out how many people have voted for a question and display the top 10 and open them in the default browser:
 
 ```bash
 export BROWSER='/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe'
