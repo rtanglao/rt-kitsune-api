@@ -1,6 +1,14 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 15october2018
+### 15october2018 num_votes
+
+```bash
+export BROWSER='/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe'
+./top-10-num-votes.rb 2018 9 5 2018 9 25 2>05-25september2018 top-10-votes.stderr.text
+```
+
 ## 02october2018
 ### 02october2018 find out how many questions have a certain tag
 
