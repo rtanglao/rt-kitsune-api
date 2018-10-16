@@ -57,6 +57,6 @@ questionsColl.find(:created =>
 
   num_votes = q["num_votes"]
   id = q["id"]
-  logger.debug "num_votes:" + num_votes.to_s + " id:", id._to_s
+  logger.debug "num_votes:" + num_votes.to_s + " id:", id.to_s
   puts "https://support.mozilla.org/questions/" + id.to_s
 end
