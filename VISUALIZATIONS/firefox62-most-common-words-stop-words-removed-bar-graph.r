@@ -32,3 +32,4 @@ ff62_count %>%
   xlab(NULL) +
   coord_flip() 
 # which produces created20october2018-stop-words-removed-firefox62-first-3-weeks-most-common-words.png
+# https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/created20october2018-stop-words-removed-firefox62-first-3-weeks-most-common-words.png
