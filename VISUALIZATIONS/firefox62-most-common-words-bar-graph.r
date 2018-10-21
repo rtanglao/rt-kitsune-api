@@ -29,4 +29,5 @@ ff62_count %>%
   geom_col() +
   xlab(NULL) +
   coord_flip() 
-# which produces Rplot13
+# which produces:
+# https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/created20october2018-firefox62-first-3-weeks-most-common-words.png
