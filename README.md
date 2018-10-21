@@ -1,6 +1,11 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 20october2018 graph most common words:
+* https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/firefox62-most-common-words-bar-graph.r
+* output: https://www.flickr.com/photos/roland/44549267815/ (**in a future version, need to remove stopwords like firefox, ff62, ff, numbers, etc**), also on github:
+![created20october2018-firefox62-first-3-weeks-most-common-words](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/created20october2018-firefox62-first-3-weeks-most-common-words.png)
+
 ## 20october2018 update csv file
 
 ```bash
