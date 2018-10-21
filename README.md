@@ -1,6 +1,15 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 20october2018 update csv file
+
+```bash
+cd /home/rtanglao/GIT/rt-kitsune-api/VISUALIZATIONS
+ ../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic.rb \
+ 2018 9 5 2018 9 25 \
+ created-20october2018-5-25september-ff-desktop-questions-id-content-created-product-tags-title-topic.csv
+```
+
 ## 15october2018
 ### 15october2018 num_votes
 
