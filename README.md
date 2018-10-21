@@ -1,6 +1,12 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 21october2018 running until may 5 to get ff60 questions
+* try 1 hung in june 2018!
+```bash
+./get-sumo-firefox-questions-from-api.rb 2018 05 9 2> try2-21october2018-get_ff60_ff61_ff62_stderr.txt
+```
+
 ## 20october2018 graph most common words with stopwords like ff,firefox, mozilla, browser, computer removed:
 * https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/firefox62-most-common-words-stop-words-removed-bar-graph.r
 ![created20october2018-stop-words-removed-firefox62-first-3-weeks-most-common-words](https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/created20october2018-stop-words-removed-firefox62-first-3-weeks-most-common-words.png)
