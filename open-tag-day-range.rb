@@ -67,6 +67,6 @@ questionsColl.find(:created =>
   Launchy.open("http://support.mozilla.org/questions/" + id.to_s)
   sleep(0.5)
 end
-logger.debug "day range FROM:" + ARGV[0]+ARGV[1]+ARGV[2] + 
-      "to:" ARGV[3]+ARGV[4]+ARGV[5] +
+logger.debug "day range FROM:" + ARGV[0] + ARGV[1] + ARGV[2] + 
+      "to:" + ARGV[3] + ARGV[4] + ARGV[5] +
       " number of tabs for tag:" + TAG +  "is:" + number_of_tabs_for_this_tag.to_s
