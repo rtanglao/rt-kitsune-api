@@ -1,6 +1,11 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 21october2018 get firefox 60 may 9, 2018 until firefox 62 end of 3rd week september 25, 2018
+```bash
+./print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic.rb 2018 5 9 2018 9 25 9may-25september2018-ff-desktop-questions-id-content-created-product-tags-title-topic.csv
+```
+
 ## 21october2018 running until may 5 to get ff60 questions
 * try 1 hung in june 2018!
 ```bash
