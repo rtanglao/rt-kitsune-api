@@ -10,7 +10,6 @@ created21october2018-ff60-9-29may2018-questions-id-content-created-product-tags-
 ./print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion.rb \
 2018 6 26 2018 7 16 61 \
 created21october2018-ff61-26june-16july-2018-questions-id-content-created-product-tags-topic-firefoxversion.csv
-## 21october2018 get firefox 60 may 9, 2018 until firefox 62 end of 3rd week september 25, 2018
 ./print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion.rb \
 2018 9 5 2018 9 25 62 \
 created21october2018-ff62-5-25september-2018-questions-id-content-created-product-tags-topic-firefoxversion.csv
