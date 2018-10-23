@@ -1,6 +1,14 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 22october2018 ff60-62 1st 3 weeks non stemmed
+
+* https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/ff60-ff62-ff63-1st-three-weeks-common-words.r
+
+<br />
+
+![ff60-62 1st 3 weeks non stemmed](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/ff60-ff62-ff63-1st-three-weeks-common-words.png)
+
 ## 22october2018 snowball  stemmer applied to firefox 62 data
 
 * https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-stemmer-firefox62-most-common-words-stop-words-removed-bar-graph.R erroneously produces "tri" (try? tries?) and even more unintelligible stems than hunwell)
