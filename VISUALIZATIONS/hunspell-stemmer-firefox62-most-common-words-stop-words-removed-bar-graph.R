@@ -44,4 +44,5 @@ ff62_count %>%
   geom_col() +
   xlab(NULL) +
   coord_flip() 
-# which produces Rplot13
+# which produces:
+# https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-stemmer-firefox62-most-common-words-stop-words-removed-bar-graph.png
