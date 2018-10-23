@@ -2,10 +2,13 @@
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 22october2018 hunwell stemmer applied to firefox 62 data
-* https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-stemmer-firefox62-most-common-words-stop-words-removed-bar-graph.R \
-erroneously produces "ha" (hang?) and "stall" (install?)
+
+* https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-stemmer-firefox62-most-common-words-stop-words-removed-bar-graph.R erroneously produces "ha" (hang?) and "stall" (install?)
+
 <br />
+
 ![ff62-hunspell-stemmer](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/hunspell-stemmer-firefox62-most-common-words-stop-words-removed-bar-graph.png)
+
 ## 21october2018 get firefox 60-62 first 3 weeks with firefoxversion in preparation for faceted plot
 
 ```bash
