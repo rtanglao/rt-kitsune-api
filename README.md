@@ -1,6 +1,14 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 22october2018 snoball  stemmer applied to firefox 62 data
+
+* https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-stemmer-firefox62-most-common-words-stop-words-removed-bar-graph.R erroneously produces "tri" (try? tries?) and even more unintelligible stems than hunwell)
+
+<br />
+
+![ff62-snowball-stemmer](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/snowball-stemmer-firefox62-most-common-words-stop-words-removed-bar-graph.png)
+
 ## 22october2018 hunwell stemmer applied to firefox 62 data
 
 * https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-stemmer-firefox62-most-common-words-stop-words-removed-bar-graph.R erroneously produces "ha" (hang?) and "stall" (install?) and "aft" (not sure what this is!)
