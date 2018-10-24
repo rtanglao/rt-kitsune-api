@@ -1,6 +1,12 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 24october2018 get the remainder of 23october list and open them
+
+```bash
+./get-sumo-firefox-questions-from-api.rb 2018 10 22 2> 24october2018-1205am-get-sumo-questions-stderr.txt
+```
+
 ## 23october2018 get questions for day 1 and open them
 
 ```bash
