@@ -1,10 +1,11 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
-## 23october2018 get questions for day 1
+## 23october2018 get questions for day 1 and open them
 
 ```bash
 ./get-sumo-firefox-questions-from-api.rb 2018 10 19 2> 23october2018-1035pm-get-sumo-questions-stderr.txt
+./open-day-in-browser.rb 2018 10 23 # and tag them rolandff63experiment
 ```
 ## 23october2018 hunspell stemmed ff60-62
 * https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-ff60-ff61-ff62-1st-three-weeks-common-words.R
