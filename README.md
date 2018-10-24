@@ -2,11 +2,11 @@
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 23october2018 hunspell stemmed ff60-62
-* https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-ff60-ff61-ff62-1st-three-weeks-common-words.R
+* https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/ff60-ff61-ff62-1st-three-weeks-common-words.r
 
 <br />
 
-![hunspell stemmed ff60-62 1st 3 weeks](https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/VISUALIZATIONS/hunspell-ff60-ff61-ff62-1st-three-weeks-common-words.png)
+![hunspell stemmed ff60-62 1st 3 weeks](https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/VISUALIZATIONS/ff60-ff61-ff62-1st-three-weeks-common-words.png)
 
 ## 22october2018 ff60-62 1st 3 weeks non stemmed
 
