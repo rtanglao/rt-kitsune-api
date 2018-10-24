@@ -33,14 +33,16 @@ if MONGO_USER
   end
 end
 
-if ARGV.length < 3
-  puts "usage: #{$0} yyyy mm dd" # day you want to open
+if ARGV.length < 4
+  puts "usage: #{$0} yyyy mm dd tag" # day you want to open
   exit
 end
 
 questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 MAX_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 23, 59) # may want Time.utc if you don't want local time
+      
+TAG = ARGV[3]
 
 number_of_tabs_for_this_day = 0
 questionsColl.find(:created =>
@@ -59,14 +61,14 @@ questionsColl.find(:created =>
   logger.debug "QUESTION id:" + id.to_s
   tags = q["tags"]
 
-  next if !tags.index{ |t| t["slug"] == "rolandff62experiment"}.nil?
-  logger.debug "nil , i.e. rolandff62experiment tag NOT found"
+  next if !tags.index{ |t| t["slug"] == TAG }.nil?
+  logger.debug "nil , i.e. TAG:" + TAG + " NOT found"
   number_of_tabs_for_this_day += 1
 
   Launchy.open("http://support.mozilla.org/questions/" + id.to_s)
   sleep(0.5)
 end
-  logger.debug "-#rolandff62experiment number of tabs for this day:" + number_of_tabs_for_this_day.to_s
+  logger.debug "-#" + TAG " number of tabs for this day:" + number_of_tabs_for_this_day.to_s
 
   
 
