@@ -2,7 +2,7 @@
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 23october2018 hunspell stemmed ff60-62
-* https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-ff60-ff62-ff63-1st-three-weeks-common-words.R
+* https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/hunspell-ff60-ff61-ff62-1st-three-weeks-common-words.R
 
 <br />
 
