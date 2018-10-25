@@ -1,5 +1,8 @@
 library(mongolite)
 library(tidyverse)
+library(textclean)
+library(tidytext)
+library(wordcloud2)
 m <- mongo("questions",
            url = "mongodb://127.0.0.1:27017/ff62questions")
 MIN_DATE = strptime("2018-10-23 00:00:00 -0700", format = '%Y-%m-%d %H:%M:%S %z',
@@ -15,7 +18,7 @@ query_str =
     MAX_DATE_STR
   )
 
-one_day_of_data <-
+one_day_of_data_from_mongo <-
   m$find(
     query = query_str,
     fields =
@@ -28,3 +31,26 @@ one_day_of_data <-
     "created" : 1
     }'
   )
+one_day_of_data <-
+  one_day_of_data_from_mongo %>%
+  unite(text, title, content, sep = " ") %>% 
+  mutate(text = replace_html(text)) %>% 
+  mutate(text  = str_replace_all(
+    text, pattern = '[bB]ookmark?s', replacement = 'bookmark')) %>%
+  mutate(text  = str_replace_all(
+    text, pattern = '[fF]irefox', replacement = '')) 
+
+tidy_23oct <-
+  one_day_of_data %>%
+  unnest_tokens(word, text) 
+data(stop_words)
+tidy_23oct <-
+  tidy_23oct %>%
+  anti_join(stop_words)
+tidy_23oct <-
+  tidy_23oct %>%
+  count(word, sort = TRUE)
+top150 <- head(tidy_23oct, 150)
+names(top150) <- c("word", "freq")
+wordcloud2(top150)
+  
