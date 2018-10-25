@@ -1,6 +1,14 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 24october2018 let's make a wordcloud for october 23
+
+* code: https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/23october2018-wordcloud-ff63.r
+<br />
+output:
+<br />
+
+
 ## 24october2018 get the remainder of 23october list and open them
 
 ```bash
