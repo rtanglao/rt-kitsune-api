@@ -5,8 +5,11 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 * code: https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/23october2018-wordcloud-ff63.r
 <br />
-output:
-<br />
+
+output:<br />
+
+![24october2018-wordcloud-screenshot-firefox62-day1-23oct2018](https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/VISUALIZATIONS/24october2018-wordcloud-screenshot-firefox62-day1-23oct2018.png)
+
 
 
 ## 24october2018 get the remainder of 23october list and open them
