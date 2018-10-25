@@ -53,4 +53,6 @@ tidy_23oct <-
 top150 <- head(tidy_23oct, 150)
 names(top150) <- c("word", "freq")
 wordcloud2(top150)
+# can't export to PNG, it's just SVG but luckily in R studio you can open in firefox and take a screenshot
+# isssue is here for this png export bug https://github.com/Lchiffon/wordcloud2/issues/8
   
