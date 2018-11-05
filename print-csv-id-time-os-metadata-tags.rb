@@ -61,6 +61,7 @@ questionsColl.find(:created =>
   metadata = q["metadata"]
   ap metadata
   metadata.each do |md|
+    ap md
     m =  md.detect { |m| m["name"] == "os"}
     if m.nil?
       print "NO operating system tag\n"
