@@ -66,7 +66,7 @@ questionsColl.find(:created =>
     os = "other"
   else
     os = m["value"]
-    logger.debug "operating system tag:", os]
+    logger.debug "operating system tag:" + os
   end
   print id.to_s + "," + q["created"].to_i.to_s + "," + os + "\n"
 end    
