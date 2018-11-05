@@ -60,14 +60,11 @@ questionsColl.find(:created =>
   logger.debug "QUESTION id:" + id.to_s
   metadata = q["metadata"]
   ap metadata
-  metadata.each do |md|
-    ap md
-    m =  md.detect { |m| m["name"] == "os"}
-    if m.nil?
-      print "NO operating system tag\n"
-    else
-      print "operating system tag:", m["value"] + "\n"
-    end
+  m =  metadata.detect { |mnv| mnv["name"] == "os"}
+  if m.nil?
+    print "NO operating system tag\n"
+  else
+    print "operating system tag:", m["value"] + "\n"
   end
   #print id.to_s + "," + t["slug"] + "," + q["created"].to_i.to_s + "\n"
 end
