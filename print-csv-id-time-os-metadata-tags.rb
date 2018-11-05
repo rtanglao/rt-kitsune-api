@@ -43,9 +43,9 @@ MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want
 MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
 
 print "id,tag,unixtime\n"
-questionsColl.find(:created =>
+questionsColl.find(:created => 
   {
-    :$gte => MIN_DATE,
+    :$gte => MIN_DATE,  
     :$lte => MAX_DATE },
   ).sort(
   {"id"=> 1}
@@ -55,6 +55,7 @@ questionsColl.find(:created =>
     "metadata" => 1,
     "created" => 1
   }).each do |q|
+  
   id = q["id"]
 
   logger.debug "QUESTION id:" + id.to_s
@@ -68,4 +69,4 @@ questionsColl.find(:created =>
     logger.debug "operating system tag:", os]
   end
   print id.to_s + "," + q["created"].to_i.to_s + "," + os + "\n"
-end
+end    
