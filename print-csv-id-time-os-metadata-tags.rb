@@ -67,9 +67,6 @@ questionsColl.find(:created =>
     else
       print "operating system tag:", m["value"] + "\n"
     end
-    #print id.to_s + "," + t["slug"] + "," + q["created"].to_i.to_s + "\n"
   end
+  #print id.to_s + "," + t["slug"] + "," + q["created"].to_i.to_s + "\n"
 end
-
-  
-
