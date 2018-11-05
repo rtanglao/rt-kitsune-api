@@ -9,7 +9,7 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 output: 
 
-[23october2018-operating-system-metadata-tags.txt]()
+[23october2018-operating-system-metadata-tags.txt](https://github.com/rtanglao/rt-kitsune-api/blob/master/23october2018-operating-system-metadata-tags.csv)
 
 
 ## 24october2018 let's make a wordcloud for october 23
