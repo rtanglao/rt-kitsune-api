@@ -1,6 +1,17 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 04november2018 get os tags from metadata tags i.e. machine tags
+
+```bash
+./print-csv-id-time-os-metadata-tags.rb 2018 10 23 2018 10 23 >23october2018-operating-system-metadata-tags.txt
+```
+
+output: 
+
+[23october2018-operating-system-metadata-tags.txt]()
+
+
 ## 24october2018 let's make a wordcloud for october 23
 
 * code: https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/23october2018-wordcloud-ff63.r
