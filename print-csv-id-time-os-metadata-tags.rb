@@ -59,7 +59,7 @@ questionsColl.find(:created =>
 
   logger.debug "QUESTION id:" + id.to_s
   metadata = q["metadata"]
-
+  ap metadata
   metadata.each do |md|
     m =  md.detect { |m| m["name"] == "os"}
     if m.nil?
