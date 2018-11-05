@@ -4,12 +4,12 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 ## 04november2018 get os tags from metadata tags i.e. machine tags
 
 ```bash
-./print-csv-id-time-os-metadata-tags.rb 2018 10 23 2018 10 23 >23october2018-operating-system-metadata-tags.txt
+./print-csv-id-time-os-metadata-tags.rb 2018 10 23 2018 10 23 >23october2018-operating-system-metadata-tags.csv
 ```
 
 output: 
 
-[23october2018-operating-system-metadata-tags.txt](https://github.com/rtanglao/rt-kitsune-api/blob/master/23october2018-operating-system-metadata-tags.csv)
+[23october2018-operating-system-metadata-tags.csv](https://github.com/rtanglao/rt-kitsune-api/blob/master/23october2018-operating-system-metadata-tags.csv)
 
 
 ## 24october2018 let's make a wordcloud for october 23
