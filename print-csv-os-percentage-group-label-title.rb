@@ -99,7 +99,9 @@ variable = "operating system"
 group = "orange"
 os_count_array.each do |o|
   logger.debug o.ai
+  logger.debug "percentage:" + percentage.to_s
   percentage = (o["count"]/num_questions).round(2)
+  logger.debug "percentage:" + percentage.to_s
   label = sprintf("%2.2d%%", percentage * 100)
   title = o["os"]
   printf("%s,%f,%s,%s,%s\n", variable, percentage, group, label, title)
