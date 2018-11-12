@@ -1,8 +1,8 @@
 os,percentage,group,label,title
-operating system,0.150000,orange,15%,other
 operating system,0.020000,orange, 2%,Windows XP
 operating system,0.040000,orange, 4%,Windows 8
 operating system,0.190000,orange,19%,Windows 7
 operating system,0.400000,orange,40%,Windows 10
+operating system,0.150000,orange,15%,Other
 operating system,0.130000,orange,13%,Mac OS
 operating system,0.070000,orange, 7%,Linux
