@@ -94,7 +94,9 @@ questionsColl.find(:created => {
     os_index['count'] += 1.0
   end
 end
-logger.debug os_count_array.ai
+logger.debug "BEFORE sorting:" + os_count_array.ai
+os_count_array.sort!{|x, y| y["os"] <=> x["os"]}
+logger.debug "AFTER sorting:" + os_count_array.ai
 variable = "operating system"
 group = "orange"
 os_count_array.each do |o|
