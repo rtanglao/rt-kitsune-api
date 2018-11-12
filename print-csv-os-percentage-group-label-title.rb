@@ -69,8 +69,26 @@ questionsColl.find(:created =>
   else
     os = m["value"]
     logger.debug "operating system tag:" + os
-    os_index = os_count_array.detect { |o| o["os"] == os}
-    if os_index.nil?
+  end
+  case os
+  when /^Windows 7/i
+    os = "Windows 7"
+  when /^Windows 10/i
+    os = "Windows 10"
+  when /^Windows 8/i
+    os = "Windows 8"
+  when /^Windows XP/i
+    os = "Windows XP"
+  when /^Mac OS/i, /^macos/i
+    os = "Mac OS"
+  when /^Linux/i, /^ubuntu/i, /^centos/i, /^arch/i, /^lfs/i, /^fedora/i 
+    os = "Linux"
+  else 
+    os = "other"
+  end
+
+  os_index = os_count_array.detect { |o| o["os"] == os}
+  if os_index.nil?
       os_count_array.push({'count' => 1, 'os' => os})
     else
       os_index['count'] += 1
