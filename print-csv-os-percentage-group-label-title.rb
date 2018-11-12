@@ -97,7 +97,7 @@ end
 logger.debug os_count_array.ai
 variable = "operating system"
 group = "orange"
-os.each do |o|
+os_count_array.each do |o|
   percentage = (o["count"]/num_questions).round(2)
   label = sprintf("%2.2d%%", percentage * 100)
   title = o["os"]
