@@ -101,5 +101,5 @@ os_count_array.each do |o|
   percentage = (o["count"]/num_questions).round(2)
   label = sprintf("%2.2d%%", percentage * 100)
   title = o["os"]
-  printf ("%s,%f,%s,%s,%s\n" variable, percentage, label, title)
+  printf ("%s,%f,%s,%s,%s\n", variable, percentage, label, title)
 end
