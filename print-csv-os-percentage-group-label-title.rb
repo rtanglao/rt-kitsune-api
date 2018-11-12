@@ -101,6 +101,7 @@ os_count_array.each do |o|
   logger.debug o.ai
   percentage = (o["count"]/num_questions).round(2)
   logger.debug "percentage:" + percentage.to_s
+  logger.debug "percentage without rounding:" + (o["count"]/num_questions).to_s
   label = sprintf("%2.2d%%", percentage * 100)
   title = o["os"]
   printf("%s,%f,%s,%s,%s\n", variable, percentage, group, label, title)
