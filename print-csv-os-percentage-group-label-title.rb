@@ -64,7 +64,7 @@ questionsColl.find(:created => {
   m =  metadata.detect { |mnv| mnv["name"] == "os"}
   if m.nil?
     logger.debug "NO operating system tag"
-    os = "other"
+    os = "Other"
   else
     os = m["value"]
     logger.debug "operating system tag:" + os
@@ -84,7 +84,7 @@ questionsColl.find(:created => {
     os = "Linux"
   else 
     logger.debug "SETTING os:" + os + " to other"
-    os = "other"
+    os = "Other"
   end
 
   os_index = os_count_array.detect { |o| o["os"] == os}
