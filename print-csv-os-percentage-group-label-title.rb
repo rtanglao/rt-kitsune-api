@@ -84,6 +84,7 @@ questionsColl.find(:created =>
   when /^Linux/i, /^ubuntu/i, /^centos/i, /^arch/i, /^lfs/i, /^fedora/i 
     os = "Linux"
   else 
+    logger.debug "SETTING os:" + os + " to other"
     os = "other"
   end
 
