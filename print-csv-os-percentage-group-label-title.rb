@@ -89,10 +89,9 @@ questionsColl.find(:created =>
 
   os_index = os_count_array.detect { |o| o["os"] == os}
   if os_index.nil?
-      os_count_array.push({'count' => 1, 'os' => os})
-    else
-      os_index['count'] += 1
-    end
+    os_count_array.push({'count' => 1, 'os' => os})
+  else
+    os_index['count'] += 1
   end
 end
 logger.debug os_count_array.ai
