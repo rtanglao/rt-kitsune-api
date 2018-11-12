@@ -6,7 +6,6 @@ require 'time'
 require 'date'
 require 'mongo'
 require 'logger'
-require 'launchy'
 
 logger = Logger.new(STDERR)
 logger.level = Logger::DEBUG
@@ -43,6 +42,8 @@ MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want
 MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
 
 print "os,percentage,group,label,title\n"
+num_questions = 0
+os_count_array=[]
 questionsColl.find(:created => 
   {
     :$gte => MIN_DATE,  
@@ -56,6 +57,7 @@ questionsColl.find(:created =>
     "created" => 1
   }).each do |q|
   
+  num_questions += 1
   id = q["id"]
 
   logger.debug "QUESTION id:" + id.to_s
@@ -67,6 +69,12 @@ questionsColl.find(:created =>
   else
     os = m["value"]
     logger.debug "operating system tag:" + os
+    os_index = os_count_array.detect { |o| o["os"] == os}
+    if os_index.nil?
+      os_count_array.push('count' => 1, 'os' => os}
+    else
+      os_index['count'] += 1
+    end
   end
-  print id.to_s + "," + q["created"].to_i.to_s + "," + os + "\n"
-end    
+end
+logger.ai os_count_array
