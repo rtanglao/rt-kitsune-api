@@ -77,4 +77,4 @@ questionsColl.find(:created =>
     end
   end
 end
-logger.ai os_count_array
+logger.debug os_count_array.ai
