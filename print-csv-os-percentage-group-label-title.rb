@@ -44,10 +44,9 @@ MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may wa
 print "os,percentage,group,label,title\n"
 num_questions = 0
 os_count_array=[]
-questionsColl.find(:created => 
-  {
-    :$gte => MIN_DATE,  
-    :$lte => MAX_DATE },
+questionsColl.find(:created => {
+  :$gte => MIN_DATE,  
+  :$lte => MAX_DATE },
   ).sort(
   {"id"=> 1}
   ).projection(
@@ -55,7 +54,7 @@ questionsColl.find(:created =>
     "id" => 1,
     "metadata" => 1,
     "created" => 1
-  }).each do |q|
+}).each do |q|
   
   num_questions += 1
   id = q["id"]
@@ -96,3 +95,12 @@ questionsColl.find(:created =>
   end
 end
 logger.debug os_count_array.ai
+variable = "operating system"
+group = "orange"
+os.each do |o|
+  percentage = (o["count"]/num_questions).round(2)
+  label = sprintf("%2.2d%%", percentage * 100)
+  title = o["os"]
+  print variable + "," + percentage + "," + group +
+    "," + label + "," +title
+end
