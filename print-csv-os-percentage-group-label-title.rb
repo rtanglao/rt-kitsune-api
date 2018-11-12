@@ -104,3 +104,4 @@ os_count_array.each do |o|
   title = o["os"]
   printf("%s,%f,%s,%s,%s\n", variable, percentage, group, label, title)
 end
+logger.debug "num_questions:" + num_questions.to_s
