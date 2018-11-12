@@ -71,7 +71,7 @@ questionsColl.find(:created =>
     logger.debug "operating system tag:" + os
     os_index = os_count_array.detect { |o| o["os"] == os}
     if os_index.nil?
-      os_count_array.push('count' => 1, 'os' => os}
+      os_count_array.push('count' => 1, 'os' => os})
     else
       os_index['count'] += 1
     end
