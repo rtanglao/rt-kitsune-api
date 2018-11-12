@@ -1,6 +1,12 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 12november2018 get os percentage
+* for firefox 62 first 3 weeks september 5-25, 2018:
+```bash
+./print-csv-os-percentage-group-label-title.rb 2018 9 5 2018 9 25 >ff62_operating_system_first3weeks.csv
+```
+
 ## 04november2018 get os tags from metadata tags i.e. machine tags
 
 ```bash
