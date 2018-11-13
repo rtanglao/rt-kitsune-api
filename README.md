@@ -10,9 +10,14 @@ convert ff62-first-3-weeks-operating-system..png -trim trimmed-ff62-first-3-week
 convert trimmed-ff62-first-3-weeks-operating-system.png -bordercolor White -border 5x5 5x5border-trimmed-ff62-first-3-weeks-operating-system.png
 ```
 
-### 12november2018 trimmed ff61 and ff62 output
+### 12november2018 trimmed Firstfox 61 and Firefox 62 and Firefox 63 output
 
 **ff61:**<br />
+
+![ff61 first 3 week operating system](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/5x5border-trimmed-ff61-first-3-weeks-operating-system.png)
+
+**ff62:**<br />
+![ff62 first 3 week operating system](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/5x5border-trimmed-ff62-first-3-weeks-operating-system.png)
 
 **ff62:**<br />
 
