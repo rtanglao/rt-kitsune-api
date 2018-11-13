@@ -1,6 +1,10 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 12november2018 ff61 gauge plot for operating system
+
+![ff61-first-3-weeks-operating-system](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/ff61-first-3-weeks-operating-system.png.png
+
 ## 12november2018 get os percentage
 * for firefox 62 first 3 weeks september 5-25, 2018:
 ```bash
