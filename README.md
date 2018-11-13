@@ -1,6 +1,21 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 12november2018 trim the image
+
+```bash
+convert ff61-first-3-weeks-operating-system.png.png -trim trimmed-ff61-first-3-weeks-operating-system.png.png
+convert trimmed-ff61-first-3-weeks-operating-system.png.png -bordercolor White -border 5x5 5x5border-trimmed-ff61-first-3-weeks-operating-system.png
+convert ff62-first-3-weeks-operating-system..png -trim trimmed-ff62-first-3-weeks-operating-system.png 
+convert trimmed-ff62-first-3-weeks-operating-system.png -bordercolor White -border 5x5 5x5border-trimmed-ff62-first-3-weeks-operating-system.png
+```
+
+### 12november2018 trimmed ff61 and ff62 output
+
+**ff61:**<br />
+
+**ff62:**<br />
+
 ## 12november2018 ff62 gauge plot for operating system
 
 following is generated via: https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/12november2018-gauge-plot-ff62.r (not sure why it has soooo much white space)
