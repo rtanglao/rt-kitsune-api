@@ -39,7 +39,7 @@ end
 
 questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
-NUMBER_OF_DAYS = ARG[3].to_i
+NUMBER_OF_DAYS = ARGV[3].to_i
 print "daynumber,issue.type,issue.count\n"
 num_days = 0
 daynumber = 1
