@@ -16,7 +16,7 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 **ff63:**<br />
 
-![ff63-1st-3-weeks-antivirus-bookmarks-tufte-sparkline.png](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/ff62-1st-3-weeks-antivirus-bookmarks-tufte-sparkline.png)
+![ff63-1st-3-weeks-antivirus-bookmarks-tufte-sparkline.png](https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/VISUALIZATIONS/ff63-1st-3-weeks-antivirus-bookmarks-tufte-sparkline.png)
 
 ## 12november2018 trim the image
 
