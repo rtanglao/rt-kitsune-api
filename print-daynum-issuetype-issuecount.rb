@@ -74,13 +74,10 @@ while (num_days < NUMBER_OF_DAYS) do
         /secureanywhere/i, /trendmicro/i, /trend micro/i, /anti virus/i, /antivirus/i
         number_of_antivirus += 1
     end
- 
-    print day_number.to_s + "," + "bookmarks," + number_of_bookmarks.to_s + "\n"
-    print day_number.to_s + "," + "antivirus," + number_of_antivirus.to_s + "\n"
-  end
-  
-  day_number += 1
-  num_days += 1
-  
-  min_date = Time.at(min_date.to_i + 60 * 60 * 24)
+  end  
+ print day_number.to_s + "," + "bookmarks," + number_of_bookmarks.to_s + "\n"
+ print day_number.to_s + "," + "antivirus," + number_of_antivirus.to_s + "\n"  
+ day_number += 1
+ num_days += 1 
+ min_date = Time.at(min_date.to_i + 60 * 60 * 24)
 end
