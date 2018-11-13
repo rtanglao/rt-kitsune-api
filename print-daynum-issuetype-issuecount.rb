@@ -42,7 +42,7 @@ MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want
 NUMBER_OF_DAYS = ARGV[3].to_i
 print "daynumber,issue.type,issue.count\n"
 num_days = 0
-daynumber = 1
+day_number = 1
 while (num_days < NUMBER_OF_DAYS) do
   number_of_bookmarks = 0
   number_of_antivirus = 0
