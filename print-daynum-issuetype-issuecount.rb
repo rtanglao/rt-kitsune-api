@@ -81,5 +81,5 @@ while (num_days < NUMBER_OF_DAYS) do
   day_number += 1
   num_days += 1
   
-  min_date = max_date.to_i + 60 * 60 * 24
+  min_date = min_date.to_i + 60 * 60 * 24
 end
