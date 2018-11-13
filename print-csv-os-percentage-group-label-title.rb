@@ -98,14 +98,14 @@ logger.debug "BEFORE sorting:" + os_count_array.ai
 os_count_array.sort!{|x, y| y["os"] <=> x["os"]}
 logger.debug "AFTER sorting:" + os_count_array.ai
 variable = "operating system"
-group = "orange"
-os_count_array.each do |o|
+os_count_array.each_with_index o |o, index|
   logger.debug o.ai
   percentage = (o["count"]/num_questions).round(2)
   logger.debug "percentage:" + percentage.to_s
   logger.debug "percentage without rounding:" + (o["count"]/num_questions).to_s
   label = sprintf("%2d%%", percentage * 100)
   title = o["os"]
+  group = index % 2 ? "orange" : "red"
   printf("%s,%.2f,%s,%s,%s\n", variable, percentage, group, label, title)
 end
 logger.debug "num_questions:" + num_questions.to_s
