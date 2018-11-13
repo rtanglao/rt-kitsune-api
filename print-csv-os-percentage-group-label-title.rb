@@ -98,7 +98,7 @@ logger.debug "BEFORE sorting:" + os_count_array.ai
 os_count_array.sort!{|x, y| y["os"] <=> x["os"]}
 logger.debug "AFTER sorting:" + os_count_array.ai
 variable = "operating system"
-os_count_array.each_with_index o |o, index|
+os_count_array.each_with_index |o, index|
   logger.debug o.ai
   percentage = (o["count"]/num_questions).round(2)
   logger.debug "percentage:" + percentage.to_s
