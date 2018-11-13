@@ -46,7 +46,7 @@ day_number = 1
 while (num_days < NUMBER_OF_DAYS) do
   number_of_bookmarks = 0
   number_of_antivirus = 0
-  max_date = min_date.to_i + (60 * 60 * 24) - 1
+  max_date = Time.at(min_date.to_i + (60 * 60 * 24) - 1)
   logger.debug "MIN:" + min_date.to_i.to_s + " MAX:" + max_date.to_i.to_s
   questionsColl.find(:created => 
   {
@@ -82,5 +82,5 @@ while (num_days < NUMBER_OF_DAYS) do
   day_number += 1
   num_days += 1
   
-  min_date = min_date.to_i + 60 * 60 * 24
+  min_date = Time.at(min_date.to_i + 60 * 60 * 24)
 end
