@@ -19,7 +19,7 @@ convert trimmed-ff62-first-3-weeks-operating-system.png -bordercolor White -bord
 **ff62:**<br />
 ![ff62 first 3 week operating system](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/5x5border-trimmed-ff62-first-3-weeks-operating-system.png)
 
-**ff62:**<br />
+**ff63:**<br />
 
 ## 12november2018 ff62 gauge plot for operating system
 
