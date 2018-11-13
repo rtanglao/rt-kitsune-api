@@ -47,7 +47,7 @@ while (num_days < NUMBER_OF_DAYS) do
   number_of_bookmarks = 0
   number_of_antivirus = 0
   max_date = min_date.to_i + (60 * 60 * 24) - 1
-  logger.debug "MIN:" + min_date + " MAX:" + max_date
+  logger.debug "MIN:" + min_date.to_i.to_s + " MAX:" + max_date.to_i.to_s
   questionsColl.find(:created => 
   {
     :$gte => min_date,  
