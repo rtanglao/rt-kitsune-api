@@ -38,7 +38,7 @@ if ARGV.length < 4
 end
 
 questionsColl = db[:questions]
-MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
+min_date = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 NUMBER_OF_DAYS = ARGV[3].to_i
 print "daynumber,issue.type,issue.count\n"
 num_days = 0
@@ -46,11 +46,11 @@ day_number = 1
 while (num_days < NUMBER_OF_DAYS) do
   number_of_bookmarks = 0
   number_of_antivirus = 0
-  MAX_DATE = MIN_DATE.to_i + (60 * 60 * 24) - 1
+  max_date = min_date.to_i + (60 * 60 * 24) - 1
   questionsColl.find(:created => 
   {
-    :$gte => MIN_DATE,  
-    :$lte => MAX_DATE },
+    :$gte => min_date,  
+    :$lte => max_date },
     ).sort(
     {"id"=> 1}
     ).projection(
@@ -80,5 +80,5 @@ while (num_days < NUMBER_OF_DAYS) do
   day_number += 1
   num_days += 1
   
-  MIN_DATE = MIN_DATE.to_i + 60 * 60 * 24
+  min_date = max_date.to_i + 60 * 60 * 24
 end
