@@ -61,6 +61,7 @@ while (num_days < NUMBER_OF_DAYS) do
       "title" => 1
   }).each do |q|
   
+    logger.debug q.ai    
     id = q["id"]
     text = q["title"] + " " + q["content"]
 
