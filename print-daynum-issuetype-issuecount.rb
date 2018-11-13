@@ -33,79 +33,52 @@ if MONGO_USER
 end
 
 if ARGV.length < 4
-  puts "usage: #{$0} yyyy mm dd number_of_dats" # 
+  puts "usage: #{$0} yyyy mm dd number_of_days" # 
   exit
 end
 
 questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
-MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
-
-print "os,percentage,group,label,title\n"
-num_questions = 0
-os_count_array=[]
-questionsColl.find(:created => {
-  :$gte => MIN_DATE,  
-  :$lte => MAX_DATE },
-  ).sort(
-  {"id"=> 1}
-  ).projection(
+NUMBER_OF_DAYS = ARG[3].to_i
+print "daynumber,issue.type,issue.count\n"
+num_days = 0
+daynumber = 1
+while (num_days < NUMBER_OF_DAYS) do
+  number_of_bookmarks = 0
+  number_of_antivirus = 0
+  MAX DATE = MIN_DATE.to_i + (60 * 60 * 24) - 1
+  questionsColl.find(:created => 
   {
-    "id" => 1,
-    "metadata" => 1,
-    "created" => 1
-}).each do |q|
+    :$gte => MIN_DATE,  
+    :$lte => MAX_DATE },
+    ).sort(
+    {"id"=> 1}
+    ).projection(
+    {
+      "id" => 1,
+      "content" => 1,
+      "title" => 1
+  }).each do |q|
   
-  num_questions += 1
-  id = q["id"]
+    id = q["id"]
+    text = q["title"] + " " + q["content"]
 
-  logger.debug "QUESTION id:" + id.to_s
-  metadata = q["metadata"]
-  m =  metadata.detect { |mnv| mnv["name"] == "os"}
-  if m.nil?
-    logger.debug "NO operating system tag"
-    os = "Other"
-  else
-    os = m["value"]
-    logger.debug "operating system tag:" + os
+    logger.debug "QUESTION id:" + id.to_s
+    logger.debug "TEXT:" + text
+    case text
+      when /bookmark/i
+        number_of_bookmarks += 1
+      when /kaspersky/i, /sophos/i, /avast/i, /avg/i, /bitdefender/i, /norton/i, /eset/i, /mcafee/i, /nod32/i,
+        /secureanywhere/i, /trendmicro/i, /trend micro/i, /anti virus/i, /antivirus/i
+        number_of_antivirus += 1
+    end
+ 
+    print day_number.to_s + "," + "bookmarks," + number_of_bookmarks.to_s + "\n"
+    print day_number.to_s + "," + "antivirus," + number_of_antivirus.to_s + "\n"
   end
-  case os
-  when /^Windows 7/i
-    os = "Windows 7"
-  when /^Windows 10/i
-    os = "Windows 10"
-  when /^Windows 8/i
-    os = "Windows 8"
-  when /^Windows XP/i
-    os = "Windows XP"
-  when /^Mac OS/i, /^macos/i
-    os = "Mac OS"
-  when /^Linux/i, /^ubuntu/i, /^centos/i, /^arch/i, /^lfs/i, /^fedora/i 
-    os = "Linux"
-  else 
-    logger.debug "SETTING os:" + os + " to other"
-    os = "Other"
-  end
-
-  os_index = os_count_array.detect { |o| o["os"] == os}
-  if os_index.nil?
-    os_count_array.push({'count' => 1.0, 'os' => os})
-  else
-    os_index['count'] += 1.0
-  end
+  
+  day_number += 1
+  num_days += 1
+  
+  MIN_DATE = MIN_DATE.to_i + 60 * 60 * 24
 end
-logger.debug "BEFORE sorting:" + os_count_array.ai
-os_count_array.sort!{|x, y| y["os"] <=> x["os"]}
-logger.debug "AFTER sorting:" + os_count_array.ai
-variable = "operating system"
-os_count_array.each_with_index do |o, index|
-  logger.debug o.ai
-  percentage = (o["count"]/num_questions).round(2)
-  logger.debug "percentage:" + percentage.to_s
-  logger.debug "percentage without rounding:" + (o["count"]/num_questions).to_s
-  label = sprintf("%2d%%", percentage * 100)
-  title = o["os"]
-  group = index % 2 == 0 ? "orange" : "red"
-  printf("%s,%.2f,%s,%s,%s\n", variable, percentage, group, label, title)
-end
-logger.debug "num_questions:" + num_questions.to_s
