@@ -3,6 +3,8 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 12november2018 ff61 gauge plot for operating system
 
+following is generated via: https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/12november2018-gauge-plot-ff61.r (not sure why it has soooo much white space)
+
 ![ff61-first-3-weeks-operating-system](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/ff61-first-3-weeks-operating-system.png.png)
 
 ## 12november2018 get os percentage
