@@ -5,7 +5,7 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 * 1\. generate the data
 ```bash
-./print-daynum-issuetype-issuecount.rb 2018 10 23 21 >ff63-antivirus-bookmarks-1st3weeks.csv
+./print-csv-os-percentage-group-label-title.rb 2018 10 23 2018 11 12 >ff63_operating_system_first3weeks.csv
 ```
 * 2\. generate the graph in r studio by running: [13november2018-gauge-plot-ff63-1st-3-weeks.R](https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/13november2018-gauge-plot-ff63-1st-3-weeks.R), output is here: [ff63-first-3-weeks-operating-system.png](https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/ff63-first-3-weeks-operating-system.png)
 
