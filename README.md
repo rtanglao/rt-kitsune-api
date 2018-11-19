@@ -1,6 +1,12 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 18november2018 print ff63 operating system gauge plout
+
+```bash
+./print-daynum-issuetype-issuecount.rb 2018 10 23 21 >ff63-antivirus-bookmarks-1st3weeks.csv
+ ```
+ 
 ## 13november2018 tufte sparklines
 
 * get the data for graphing in R
