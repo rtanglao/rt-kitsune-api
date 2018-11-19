@@ -17,10 +17,8 @@ convert ff63-first-3-weeks-operating-system.png -trim trimmed-ff63-first-3-weeks
 convert trimmed-ff63-first-3-weeks-operating-system.png -bordercolor White -border 5x5 5x5border-trimmed-ff63-first-3-weeks-operating-system.png
 cd ..
 ```
+* 4\. scroll down to "12november2018 trimmed Desktop Firefox 61 and Firefox 62 and Firefox 63 output" to see the output
 
-# trim the plot and add a border
-
- ```
  
 ## 13november2018 tufte sparklines
 
@@ -61,6 +59,8 @@ convert trimmed-ff62-first-3-weeks-operating-system.png -bordercolor White -bord
 ![ff62 first 3 week operating system](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/5x5border-trimmed-ff62-first-3-weeks-operating-system.png)
 
 **ff63:**<br />
+
+![5x5border-trimmed-ff63-first-3-weeks-operating-system.png](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/5x5border-trimmed-ff63-first-3-weeks-operating-system.png)
 
 ## 12november2018 ff62 gauge plot for operating system
 
