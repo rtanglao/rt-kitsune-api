@@ -3,8 +3,23 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ## 18november2018 print ff63 operating system gauge plout
 
+* 1\. generate the data
 ```bash
 ./print-daynum-issuetype-issuecount.rb 2018 10 23 21 >ff63-antivirus-bookmarks-1st3weeks.csv
+```
+* 2\. generate the graph in r studio by running: [13november2018-gauge-plot-ff63-1st-3-weeks.R](https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/13november2018-gauge-plot-ff63-1st-3-weeks.R), output is here: [ff63-first-3-weeks-operating-system.png](https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/ff63-first-3-weeks-operating-system.png)
+
+* 3\. trim the plot and add a border
+
+```bash
+cd VISUALIZATIONS
+convert ff63-first-3-weeks-operating-system.png -trim trimmed-ff63-first-3-weeks-operating-system.png 
+convert trimmed-ff63-first-3-weeks-operating-system.png -bordercolor White -border 5x5 5x5border-trimmed-ff63-first-3-weeks-operating-system.png
+cd ..
+```
+
+# trim the plot and add a border
+
  ```
  
 ## 13november2018 tufte sparklines
