@@ -6,13 +6,20 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 * get the data for graphing in R
 ```bash
 ./print-daynum-issuetype-issuecount.rb 2018 9 5 21 >ff62-antivirus-bookmarks-1st3weeks.csv
- ./print-daynum-issuetype-issuecount.rb 2018 10 23 21 >ff63-antivirus-bookmarks-1st3weeks.csv
+./print-daynum-issuetype-issuecount.rb 2018 10 23 21 >ff63-antivirus-bookmarks-1st3weeks.csv
 ```
-* graph it using [12november2018-ff62-tufte-sparklines.r](https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/12november2018-ff62-tufte-sparklines.r)
 
 **ff62:**<br />
 
+* graph FF62 using [12november2018-ff62-tufte-sparklines.r](https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/12november2018-ff62-tufte-sparklines.r) 
+
 ![ff62-1st-3-weeks-antivirus-bookmarks-tufte-sparkline.png](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/ff62-1st-3-weeks-antivirus-bookmarks-tufte-sparkline.png)
+
+**ff63:**<br />
+
+* graph FF63 using [13november2018-ff63-tufte-sparklines.R](https://github.com/rtanglao/rt-kitsune-api/blob/master/VISUALIZATIONS/13november2018-ff63-tufte-sparklines.R) 
+
+![ff63-1st-3-weeks-antivirus-bookmarks-tufte-sparkline.png](https://raw.githubusercontent.com/rtanglao/rt-kitsune-api/master/VISUALIZATIONS/ff63-1st-3-weeks-antivirus-bookmarks-tufte-sparkline.png)
 
 ## 12november2018 trim the image
 
