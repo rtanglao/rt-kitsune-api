@@ -1,7 +1,7 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
-## 26novemeber2018 update csv file with dataset for Firefox 63 Desktop
+## 26november2018 update csv file with dataset for Firefox 63 Desktop
 
 ```bash
 cd /home/rtanglao/GIT/rt-kitsune-api/VISUALIZATIONS
