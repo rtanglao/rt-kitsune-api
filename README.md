@@ -1,6 +1,15 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 26novemeber2018 update csv file with dataset for Firefox 63 Desktop
+
+```bash
+cd /home/rtanglao/GIT/rt-kitsune-api/VISUALIZATIONS
+ ../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic.rb \
+ 2018 10 23 2018 11 12 \
+ created-26november-2018-23october-11november-ff-desktop-questions-id-content-created-product-tags-title-topic.csv
+```
+
 ## 18november2018 print ff63 operating system gauge plout
 
 * 1\. generate the data
@@ -180,7 +189,7 @@ created21october2018-ff62-5-25september-2018-questions-id-content-created-produc
 * output: https://www.flickr.com/photos/roland/44549267815/ (**in a future version, need to remove stopwords like firefox, ff62, ff, numbers, etc**), also on github:
 ![created20october2018-firefox62-first-3-weeks-most-common-words](https://github.com/rtanglao/rt-kitsune-api/raw/master/VISUALIZATIONS/created20october2018-stop-words-removed-firefox62-first-3-weeks-most-common-words.png)
 
-## 20october2018 update csv file
+## 20october2018 update csv file with dataset for Firefox 62
 
 ```bash
 cd /home/rtanglao/GIT/rt-kitsune-api/VISUALIZATIONS
