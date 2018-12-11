@@ -80,7 +80,7 @@ end_program = false
 question_number = 0
   
 while !end_program
-  sleep(0.5) # sleep half second between API calls
+  sleep(1.0) # sleep 1 second between API calls
   questions  = getKitsuneResponse(url, url_params)
   url = questions["next"]
   logger.debug "next url:" + url
