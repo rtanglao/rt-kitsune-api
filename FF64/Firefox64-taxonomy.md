@@ -18,6 +18,7 @@
 
 * slow
 * crashes
+* webcompat
 
 ## Anti-virus
 
@@ -27,6 +28,8 @@
 * kaspersky
 * norton
 * bitdefender
+
+## other non-av 3rdparty software
 
 ## Release (so i know which questions i have processed, typically only used in first 3 weeks)
 
