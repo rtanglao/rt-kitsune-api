@@ -14,7 +14,7 @@
 * add-ons problem
 * howtousefirefox <---- questions that are in the SUMO Knowledge Base or should be in the SUMO KB
 * unclearquestion <--- question doesn't make sense
-* firefox for enterprise <--- enterprise question that really most support volunteers have no idea of
+* firefox for enterprise <--- enterprise question that really most support volunteers have no idea of e.g. GPO stuff, MSI stuff, policy engine stuff
 
 ## General Problems
 
@@ -24,6 +24,7 @@
 * dataloss
 * sync
 * Firefox Accounts
+* banking
 
 ## Anti-virus
 
@@ -36,6 +37,9 @@
 
 ## other non-av 3rdparty software
 
+* quickheal 
+* quickhealproblem <---- known problem since at least FF62
+
 ## Release (so i know which questions i have processed, typically only used in first 3 weeks)
 
 * rolandff62experiment
@@ -45,6 +49,5 @@
 ## Specific Problems
 
 * bookmarkstarwhenswitchingtabs  <--- takes a while for star to change to filled in or not filled in
-* quickheal 
-* quickhealproblem <---- known problem since at least FF62
 * nlwebcompat <--- digid and other specific to the netherlands web compatibility problems
+* natwest <--- the bank in the UK :-)
