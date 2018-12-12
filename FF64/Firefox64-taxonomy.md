@@ -26,3 +26,7 @@
 * rolandff62experiment
 * rolandff63experiment
 * rolandff64experiment
+
+## Specific Problems
+
+* bookmarkstarwhenswitchingtabs  <--- takes a while for star to change to filled in or not filled in
