@@ -26,6 +26,8 @@
 * Firefox Accounts
 * banking
 * firewall
+* hacks
+* unsupportedhacks
 
 ## Anti-virus
 
@@ -53,8 +55,9 @@
 * nlwebcompat <--- digid and other specific to the netherlands web compatibility problems
 * natwest <--- the bank in the UK :-)
 * firewallproblem
+* userchrome.css
 
-## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a license to rant or for ad hominen attacks)
+## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a license to rant or for gratuitous Mozilla attacks)
 
 * pleasedonotrant 
 
