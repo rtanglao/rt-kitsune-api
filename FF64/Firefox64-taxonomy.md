@@ -39,12 +39,13 @@
 
 ## Anti-virus
 
-* av
-* avg
-* avast
-* kaspersky
-* norton
-* bitdefender
+* av <-- anti-virus
+* avg, avgproblem, possibleavgproblem
+* avast, avastproblem, possibleavastproblem
+* kaspersky, kasperskyproblem, possiblekasperskyproblem
+* norton, nortonproblem, possiblenortonproblem
+* bitdefender, bitdefenderproblem, possiblebitdefenderproblem
+* mcafee, mcafeeproblem, possiblemcafeeproblem
 
 ## other non-av 3rdparty software
 
