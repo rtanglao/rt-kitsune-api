@@ -31,6 +31,9 @@
 * update
 * autofill
 * zoom <-- issues with zooming text or pictures
+* video
+* drm
+
 
 ## Anti-virus
 
@@ -63,6 +66,9 @@
 * autotrader.com, autotrader
 * windowsupdateblocksfirefoxupdate
 * bugxxxxx e.g. bug1511596 <--- if you know the bug number
+* widevine
+* amazonprimevideo
+* netflix
 
 ## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a licence to rant or for gratuitous Mozilla attacks)
 
