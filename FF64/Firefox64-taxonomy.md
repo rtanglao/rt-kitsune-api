@@ -12,6 +12,7 @@
 * bitdefenderproblem
 * possible3rdpartysoftwareproblem
 * add-ons problem
+* howtousefirefox <---- questions that are in the SUMO Knowledge Base or should be in the SUO KB
 
 ## Anti-virus
 
