@@ -1,4 +1,4 @@
-# Experimental Taxonomy
+# Experimental Taxonomy for SUMO Firefox Destop User Support Questions
 
 ## Troubleshooting
 
@@ -12,7 +12,7 @@
 * bitdefenderproblem
 * possible3rdpartysoftwareproblem
 * add-ons problem
-* howtousefirefox <---- questions that are in the SUMO Knowledge Base or should be in the SUMO KB
+* howtousefirefox <---- questions that are documented in the SUMO Knowledge Base or should be in the SUMO KB
 * unclearquestion <--- question doesn't make sense
 * firefox for enterprise <--- enterprise question that really most support volunteers have no idea of e.g. GPO stuff, MSI stuff, policy engine stuff
 
