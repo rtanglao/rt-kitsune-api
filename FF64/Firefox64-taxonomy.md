@@ -51,3 +51,8 @@
 * bookmarkstarwhenswitchingtabs  <--- takes a while for star to change to filled in or not filled in
 * nlwebcompat <--- digid and other specific to the netherlands web compatibility problems
 * natwest <--- the bank in the UK :-)
+
+## CPG :-)
+
+* pleasedonotrant 
+
