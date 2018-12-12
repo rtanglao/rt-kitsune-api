@@ -14,6 +14,11 @@
 * add-ons problem
 * howtousefirefox <---- questions that are in the SUMO Knowledge Base or should be in the SUO KB
 
+## General Problems
+
+* slow
+* crashes
+
 ## Anti-virus
 
 * av
@@ -32,3 +37,5 @@
 ## Specific Problems
 
 * bookmarkstarwhenswitchingtabs  <--- takes a while for star to change to filled in or not filled in
+* quickheal 
+* quickhealproblem <---- known problem since at least FF62
