@@ -11,6 +11,7 @@
 * possibleavproblem
 * bitdefenderproblem
 * possible3rdpartysoftwareproblem
+* add-ons problem
 
 ## Anti-virus
 
