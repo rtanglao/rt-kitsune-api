@@ -20,6 +20,9 @@
 * slow
 * crashes
 * webcompat
+* dataloss
+* sync
+* Firefox Accounts
 
 ## Anti-virus
 
