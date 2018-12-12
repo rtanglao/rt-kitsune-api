@@ -14,6 +14,7 @@
 * add-ons problem
 * howtousefirefox <---- questions that are in the SUMO Knowledge Base or should be in the SUMO KB
 * unclearquestion <--- question doesn't make sense
+* firefox for enterprise <--- enterprise question that really most support volunteers have no idea of
 
 ## General Problems
 
