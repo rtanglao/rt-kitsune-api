@@ -6,10 +6,11 @@
 * probablynotafirefoxproblem
 * notafirefoxproblem
 * notafirefoxusersupportproblem
-* webdev
+* webdev <---- web developer problem i.e. CSS, JS, HTML, please use stackvoverflow :-)
 * avproblem
 * possibleavproblem
 * bitdefenderproblem
+* possible3rdpartysoftwareproblem
 
 ## Anti-virus
 
