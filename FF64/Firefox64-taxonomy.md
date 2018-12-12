@@ -25,6 +25,7 @@
 * sync
 * Firefox Accounts
 * banking
+* firewall
 
 ## Anti-virus
 
@@ -51,6 +52,7 @@
 * bookmarkstarwhenswitchingtabs  <--- takes a while for star to change to filled in or not filled in
 * nlwebcompat <--- digid and other specific to the netherlands web compatibility problems
 * natwest <--- the bank in the UK :-)
+* firewallproblem
 
 ## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a license to rant or for ad hominen attacks)
 
