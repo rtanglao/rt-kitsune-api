@@ -62,8 +62,9 @@
 * updateto64glitch <--- problems updating to Firefox 64
 * autotrader.com, autotrader
 * windowsupdateblocksfirefoxupdate
+* bugxxxxx e.g. bug1511596 <--- if you know the bug number
 
-## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a license to rant or for gratuitous Mozilla attacks)
+## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a licence to rant or for gratuitous Mozilla attacks)
 
 * pleasedonotrant 
 
