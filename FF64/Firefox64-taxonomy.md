@@ -30,6 +30,7 @@
 * unsupportedhacks
 * update
 * autofill
+* zoom <-- issues with zooming text or pictures
 
 ## Anti-virus
 
