@@ -33,6 +33,8 @@
 * zoom <-- issues with zooming text or pictures
 * video
 * drm
+* unsupported
+* unsupportedfirefox
 
 
 ## Anti-virus
@@ -69,6 +71,7 @@
 * widevine
 * amazonprimevideo
 * netflix
+* unsupportedxx e.g. 'unsupportedff48' <---- firefox 48 is not supported
 
 ## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a licence to rant or for gratuitous Mozilla attacks)
 
