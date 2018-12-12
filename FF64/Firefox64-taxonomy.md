@@ -42,3 +42,4 @@
 * bookmarkstarwhenswitchingtabs  <--- takes a while for star to change to filled in or not filled in
 * quickheal 
 * quickhealproblem <---- known problem since at least FF62
+* nlwebcompat <--- digid and other specific to the netherlands web compatibility problems
