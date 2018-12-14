@@ -1,0 +1,16 @@
+rtanglao13483:rt-kitsune-api rtanglao$ ./print-num-solved-by-date.rb 2018 5 1 2018 5 31
+2188,597
+rtanglao13483:rt-kitsune-api rtanglao$ ./print-num-solved-by-date.rb 2018 6 1 2018 6 30
+2035,596
+rtanglao13483:rt-kitsune-api rtanglao$ ./print-num-solved-by-date.rb 2018 7 1 2018 7 31
+1999,506
+rtanglao13483:rt-kitsune-api rtanglao$ ./print-num-solved-by-date.rb 2018 8 1 2018 8 31
+1861,520
+rtanglao13483:rt-kitsune-api rtanglao$ ./print-num-solved-by-date.rb 2018 9 1 2018 9 30
+2017,553
+rtanglao13483:rt-kitsune-api rtanglao$ ./print-num-solved-by-date.rb 2018 10 1 2018 10 31
+1544,440
+rtanglao13483:rt-kitsune-api rtanglao$ ./print-num-solved-by-date.rb 2018 11 1 2018 11 30
+1412,315
+rtanglao13483:rt-kitsune-api rtanglao$ ./print-num-solved-by-date.rb 2018 12 1 2018 12 31
+700,141
