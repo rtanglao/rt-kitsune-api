@@ -15,6 +15,8 @@
 * howtousefirefox <---- questions that are documented in the SUMO Knowledge Base or should be in the SUMO KB
 * unclearquestion <--- question doesn't make sense
 * firefox for enterprise <--- enterprise question that really most support volunteers have no idea of e.g. GPO stuff, MSI stuff, policy engine stuff
+* possiblefirefoxenterprisequestion
+
 
 ## General Problems
 
@@ -81,6 +83,7 @@
 * optimumemail, optimum, webmail, email<--- australian email provider issues
 * multiaccountcontainers
 * multiaccountcontainersfeaturerequest
+* blockupdte
 
 ## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a licence to rant or for gratuitous Mozilla attacks)
 
