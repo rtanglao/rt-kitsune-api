@@ -1,5 +1,5 @@
 # Experimental Taxonomy for SUMO Firefox Destop User Support Questions
-
+(should capare with capstone taxonomy and sensor tower taxonomy for iOS and mobile)
 ## Troubleshooting
 
 * troubleshootingdetailsmissing
@@ -83,7 +83,7 @@
 * optimumemail, optimum, webmail, email<--- australian email provider issues
 * multiaccountcontainers
 * multiaccountcontainersfeaturerequest
-* blockupdte
+* blockupdate
 
 ## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a licence to rant or for gratuitous Mozilla attacks)
 
