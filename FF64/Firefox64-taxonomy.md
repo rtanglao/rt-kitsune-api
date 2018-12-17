@@ -75,6 +75,7 @@
 * unsupportedxx e.g. 'unsupportedff48' <---- firefox 48 is not supported
 * mojavedarkmodebugs <-- os x 10.14 dark mode bugs
 * flashfreeze <---- adobe flash causes firefox to freeze
+* qrcodeverification <--- this is a Firefox for android problem I believe
 
 ## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a licence to rant or for gratuitous Mozilla attacks)
 
