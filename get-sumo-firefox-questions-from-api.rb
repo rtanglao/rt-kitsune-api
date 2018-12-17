@@ -13,11 +13,16 @@ require 'pp'
 
 # based on:# https://github.com/rtanglao/2016-rtgram/blob/master/backupPublicVancouverPhotosByDateTaken.rb
 
-def getKitsuneResponse(url, params)
-  result = Typhoeus::Request.get(url,
-    :params => params )
+logger = Logger.new(STDERR)
+logger.level = Logger::DEBUG
+Mongo::Logger.logger.level = Logger::FATAL
+
+def getKitsuneResponse(url, params, logger)
   try_count = 0
   begin
+    result = Typhoeus::Request.get(url,
+                                 :params => params )
+    logger.debug result.ai
     x = JSON.parse(result.body)
   rescue JSON::ParserError => e
     try_count += 1
@@ -28,15 +33,12 @@ def getKitsuneResponse(url, params)
       retry
     else
       $stderr.printf("JSON::ParserError exception, retrying FAILED\n")
-      # raise e
       x = nil
     end
   end
   return x
 end
-logger = Logger.new(STDERR)
-logger.level = Logger::DEBUG
-Mongo::Logger.logger.level = Logger::FATAL
+
 MONGO_HOST = ENV["MONGO_HOST"]
 raise(StandardError,"Set Mongo hostname in ENV: 'MONGO_HOST'") if !MONGO_HOST
 MONGO_PORT = ENV["MONGO_PORT"]
@@ -81,7 +83,7 @@ question_number = 0
   
 while !end_program
   sleep(1.0) # sleep 1 second between API calls
-  questions  = getKitsuneResponse(url, url_params)
+  questions  = getKitsuneResponse(url, url_params, logger)
   url = questions["next"]
   logger.debug "next url:" + url
   url_params = nil
