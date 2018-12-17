@@ -78,6 +78,8 @@
 * qrcodeverification <--- this is a Firefox for android problem I believe
 * ivanti, ivantievnironmentmanager <---- this is beyond my "normal" Firefox knowledge
 * refreshdeletedbookmarks, dataloss <--- caused by 3rd party software?!?!
+* optimumemail, optimum, webmail, email<--- australian email provider issues
+
 ## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a licence to rant or for gratuitous Mozilla attacks)
 
 * pleasedonotrant 
