@@ -1,5 +1,6 @@
 # Experimental Taxonomy for SUMO Firefox Destop User Support Questions
-(should capare with capstone taxonomy and sensor tower taxonomy for iOS and mobile)
+
+(should compare with capstone taxonomy and sensor tower taxonomy for iOS and mobile and formalize into kitsune so you can be prompted and not have to remember; even better auto tagging; informal folksonomy aka the current tagging system should remain though!)
 ## Troubleshooting
 
 * troubleshootingdetailsmissing
