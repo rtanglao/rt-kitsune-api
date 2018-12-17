@@ -84,7 +84,9 @@
 * multiaccountcontainers
 * multiaccountcontainersfeaturerequest
 * blockupdate
-* movefindonpagetotop <--- move find on page to top
+* movefindonpagetotop <--- move find on page to top using unsupported userChrome.css
+* phpstorm <- jetbrains ide for PHP?!?
+
 ## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a licence to rant or for gratuitous Mozilla attacks)
 
 * pleasedonotrant 
