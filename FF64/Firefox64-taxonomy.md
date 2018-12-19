@@ -101,6 +101,7 @@
 * movetonewwindow
 * 64movetonewwindow <---- moved to sub menu
 * 63autoplay, autoplay <--- in FF63, chsanged to media.autoplay.default = 0 [0=Allowed, 1=Blocked, 2=Prompt] 
+* redshiftyoutubevideo <--- videos uploaded to youtube have a red colour shift
 
 ## CPG :-) (i would love to be able to hide ranting language so that only the person who posted it can see it, just because firefox doesn't work doesn't mean you have a licence to rant or for gratuitous Mozilla attacks)
 
