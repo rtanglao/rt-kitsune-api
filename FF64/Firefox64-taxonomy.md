@@ -7,7 +7,7 @@
 * probablynotafirefoxproblem
 * notafirefoxproblem
 * notafirefoxusersupportproblem
-* webdev <---- web developer problem i.e. CSS, JS, HTML, please use stackvoverflow :-)
+* webdev <---- web developer problem i.e. CSS, JS, HTML, please use stackoverflow :-)
 * avproblem
 * possibleavproblem
 * bitdefenderproblem
