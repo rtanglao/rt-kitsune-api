@@ -40,6 +40,7 @@
 * unsupportedfirefox
 * malware
 * graphicsdriver
+* noaudio
 
 
 ## Anti-virus
