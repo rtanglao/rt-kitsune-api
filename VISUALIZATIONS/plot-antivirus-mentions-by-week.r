@@ -147,15 +147,48 @@ current_previous_to_plot <-
   current_previous %>% 
   group_by(Firefox_Release, release_week_day_number) %>%
   count()
+current_label <- paste(
+  currentrelease,
+  paste(
+  args[2],
+  args[3],
+  args[4],
+  sep = "-"
+  ),
+  sep = " "
+)
+previous_label <- paste(
+  previousrelease,
+  paste(
+    args[6],
+    args[7],
+    args[8],
+    sep = "-"
+  ),
+  sep = " "
+)
 plot <-
-  ggplot(data=current_previous_to_plot, aes(
-    x=release_week_day_number, y=n, group= Firefox_Release, colour = Firefox_Release))
+  ggplot(data=current_previous_to_plot, 
+         aes(
+           x=release_week_day_number, y=n, group= Firefox_Release, 
+           colour = Firefox_Release, 
+           shape = Firefox_Release))
 plot = plot +
   geom_line(stat="identity") + 
-  labs(color = 'Firefox Anti-Virus Mentions') +
-  scale_x_discrete(limits = c("1", "2", "3", "4", "5", "6", "7")) +
+  geom_point() +
+  scale_x_discrete(limits = c("day1", "day2", "day3", "day4", "day5", "day6", "day7")) +
   geom_dl(aes(label = Firefox_Release), method = list(dl.trans(x = x + 0.2), "last.points", cex = 0.8)) +
-  geom_dl(aes(label = Firefox_Release), method = list(dl.trans(x = x - 0.2), "first.points", cex = 0.8))
+  geom_dl(aes(label = Firefox_Release), method = list(dl.trans(x = x - 0.2), "first.points", cex = 0.8)) +
+  scale_colour_discrete(
+    name = "Firefox Antivirus Mentions",
+    breaks = c(currentrelease, previousrelease),
+    labels = c(current_label, previous_label)
+  ) +
+  scale_shape_discrete(
+    name = "Firefox Antivirus Mentions",
+    breaks = c(currentrelease, previousrelease),
+    labels = c(current_label, previous_label)
+  )
 fn <- paste(
   "antivirus-1week", 
   args[1],
@@ -166,7 +199,7 @@ fn <- paste(
   args[6],
   args[7],
   args[8], sep="-"
-)
+) 
 ggsave(filename = paste(fn, ".png", sep =""), dpi = 320)
 quit()
 
