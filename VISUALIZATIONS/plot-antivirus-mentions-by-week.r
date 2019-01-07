@@ -34,7 +34,7 @@ m <- mongo("questions",
 
 query_str =
   sprintf(
-    '{ "created" : { "$gt" : { "$date" : "%s"}, "$lte" : {"$date" : "%s"}}}',
+    '{ "created" : { "$gte" : { "$date" : "%s"}, "$lte" : {"$date" : "%s"}}}',
     strftime(MIN_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"),
     strftime(MAX_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")  )
 
@@ -61,10 +61,10 @@ one_day_of_data <-
     text, pattern = '[bB]ookmark?s', replacement = 'bookmark')) %>%
   mutate(text  = str_replace_all(
     text, pattern = '[fF]irefox', replacement = '')) %>% 
-  mutate(dayofyear = yday(created)) %>% 
   mutate(release_week_day_number = yday(created) - base_yday + 1)
 
 glimpse(one_day_of_data )
+tail(one_day_of_data)
 print(one_day_of_data_from_mongo[1,2])
 quit()
 
