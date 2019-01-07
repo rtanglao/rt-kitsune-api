@@ -38,7 +38,7 @@ query_str =
     strftime(MIN_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"),
     strftime(MAX_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")  )
 
-one_day_of_data_from_mongo <-
+seven_days_of_data_from_mongo <-
   m$find(
     query = query_str,
     fields =
@@ -52,9 +52,9 @@ one_day_of_data_from_mongo <-
     sort = '{"created": 1}'
   )
 
-base_yday = yday(one_day_of_data_from_mongo[1,"created"])
-one_day_of_data <-
-  one_day_of_data_from_mongo %>%
+base_yday = yday(seven_days_of_data_from_mongo[1,"created"])
+seven_days_of_data <-
+  seven_days_of_data_from_mongo %>%
   unite(text, title, content, sep = " ") %>%
   mutate(text = replace_html(text)) %>%
   mutate(text  = str_replace_all(
@@ -63,8 +63,8 @@ one_day_of_data <-
     text, pattern = '[fF]irefox', replacement = '')) %>% 
   mutate(release_week_day_number = yday(created) - base_yday + 1)
 
-glimpse(one_day_of_data )
-tail(one_day_of_data)
-print(one_day_of_data_from_mongo[1,2])
+glimpse(seven_days_of_data )
+tail(seven_days_of_data)
+print(seven_days_of_data_from_mongo[1,2])
 quit()
 
