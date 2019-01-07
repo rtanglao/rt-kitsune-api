@@ -38,7 +38,7 @@ query_str =
     strftime(MIN_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"),
     strftime(MAX_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")  )
 
-seven_days_of_data_from_mongo <-
+previous_release_7_days_of_data_from_mongo <-
   m$find(
     query = query_str,
     fields =
@@ -52,19 +52,31 @@ seven_days_of_data_from_mongo <-
     sort = '{"created": 1}'
   )
 
-base_yday = yday(seven_days_of_data_from_mongo[1,"created"])
-seven_days_of_data <-
-  seven_days_of_data_from_mongo %>%
+base_yday = yday(previous_release_7_days_of_data_from_mongo[1,"created"])
+previous_release_7_days_of_data <-
+  previous_release_7_days_of_data_from_mongo %>%
   unite(text, title, content, sep = " ") %>%
   mutate(text = replace_html(text)) %>%
   mutate(text  = str_replace_all(
     text, pattern = '[bB]ookmark?s', replacement = 'bookmark')) %>%
   mutate(text  = str_replace_all(
     text, pattern = '[fF]irefox', replacement = '')) %>% 
-  mutate(release_week_day_number = yday(created) - base_yday + 1)
+  mutate(release_week_day_number = yday(created) - base_yday + 1) %>% 
+  mutate(Firefox_Release = previousrelease)
 
-glimpse(seven_days_of_data )
-tail(seven_days_of_data)
-print(seven_days_of_data_from_mongo[1,2])
+glimpse(previous_release_7_days_of_data )
+tail(previous_release_7_days_of_data)
+print(previous_release_7_days_of_data_from_mongo[1,"created"])
+
+antivirus_previous_release_7_days_of_data <-
+  previous_release_7_days_of_data %>% 
+  filter(
+    grepl("antivirus|anti-virus|anti\\svirus", text, ignore.case = TRUE) |
+      grepl("kaspersky|sophos|avast|avg", text, ignore.case = TRUE) |
+      grepl("bitdefender|norton|mcafee|secureanywhere", text, ignore.case = TRUE) |
+      grepl("trendmicro|trend\\smicro", text, ignore.case = TRUE) 
+    )
+      
+glimpse(antivirus_previous_release_7_days_of_data)
 quit()
 
