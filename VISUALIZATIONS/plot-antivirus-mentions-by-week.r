@@ -68,19 +68,3 @@ tail(one_day_of_data)
 print(one_day_of_data_from_mongo[1,2])
 quit()
 
-tidy_23oct <-
-  one_day_of_data %>%
-  unnest_tokens(word, text)
-data(stop_words)
-tidy_23oct <-
-  tidy_23oct %>%
-  anti_join(stop_words)
-tidy_23oct <-
-  tidy_23oct %>%
-  count(word, sort = TRUE)
-top150 <- head(tidy_23oct, 150)
-names(top150) <- c("word", "freq")
-wordcloud2(top150)
-# can't export to PNG, it's just SVG but luckily in R studio you can open in firefox and take a screenshot
-# isssue is here for this png export bug https://github.com/Lchiffon/wordcloud2/issues/8
-
