@@ -156,6 +156,17 @@ plot = plot +
   scale_x_discrete(limits = c("1", "2", "3", "4", "5", "6", "7")) +
   geom_dl(aes(label = Firefox_Release), method = list(dl.trans(x = x + 0.2), "last.points", cex = 0.8)) +
   geom_dl(aes(label = Firefox_Release), method = list(dl.trans(x = x - 0.2), "first.points", cex = 0.8))
-ggsave(filename = "antivirus.png")
+fn <- paste(
+  "antivirus-1week", 
+  args[1],
+  args[2],
+  args[3],
+  args[4],
+  args[5],
+  args[6],
+  args[7],
+  args[8], sep="-"
+)
+ggsave(filename = paste(fn, ".png", sep =""), dpi = 320)
 quit()
 
