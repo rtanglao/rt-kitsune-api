@@ -188,7 +188,10 @@ plot = plot +
     name = "Firefox Antivirus Mentions",
     breaks = c(currentrelease, previousrelease),
     labels = c(current_label, previous_label)
-  )
+  ) +
+  scale_y_continuous(
+    breaks = function(x) unique(
+      floor(pretty(seq(0, (max(x) + 1) * 1.1))))) 
 fn <- paste(
   "antivirus-1week", 
   args[1],
