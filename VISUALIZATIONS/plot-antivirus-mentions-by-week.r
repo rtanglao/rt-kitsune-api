@@ -52,7 +52,7 @@ one_day_of_data_from_mongo <-
     sort = '{"created": 1}'
   )
 
-base_yday = yday(one_day_of_data_from_mongo[1,2])
+base_yday = yday(one_day_of_data_from_mongo[1,"created"])
 one_day_of_data <-
   one_day_of_data_from_mongo %>%
   unite(text, title, content, sep = " ") %>%
