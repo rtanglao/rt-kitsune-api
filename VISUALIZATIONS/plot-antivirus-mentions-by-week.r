@@ -4,6 +4,11 @@ library(lubridate)
 library(textclean)
 library(directlabels)
 
+source("mongo-get-1week-by-date.r")
+source("text-clean-kitsune-ff-desktop-questions.r")
+source("add-release-day-number.r")
+source("antivirus-only.r")
+
 args <- commandArgs(TRUE)
 if(length(args) < 8) {
   args <- c("--help")
@@ -11,7 +16,7 @@ if(length(args) < 8) {
 if("--help" %in% args) {
   cat(" 
       Arguments:
-      currentrelease currentreleaseweekstart previsousrelease previousreleaseweekstart
+      currentrelease currentreleaseweekstart previousrelease previousreleaseweekstart
       --help              - print this text 
       Example:
       Rscript plot-antivirus-mentions-by-week.r FF62 2018 9 5 FF63 2018 10 23\n\n")
@@ -20,128 +25,78 @@ if("--help" %in% args) {
 }
 
 previousrelease <- args[1]
-print(previousrelease)
-previous_release_start_date <- 
-  make_datetime(as.integer(args[2]), as.integer(args[3]),as.integer(args[4]), 0,0,0, 
-                                   tz = "America/Vancouver")
-print(previous_release_start_date)
-
-PREV_RELEASE_MAX_DATE = previous_release_start_date + days(7) - seconds(1)
-print(PREV_RELEASE_MAX_DATE)
-PREV_RELEASE_MIN_DATE = previous_release_start_date
 
 m <- mongo("questions",
            url = "mongodb://127.0.0.1:27017/ff62questions")
 
-query_str =
-  sprintf(
-    '{ "created" : { "$gte" : { "$date" : "%s"}, "$lte" : {"$date" : "%s"}}}',
-    strftime(PREV_RELEASE_MIN_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"),
-    strftime(PREV_RELEASE_MAX_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")  )
-
-previous_release_7_days_of_data_from_mongo <-
-  m$find(
-    query = query_str,
-    fields =
-      '{
-    "_id" : 0,
-    "id" : 1,
-    "title" : 1,
-    "content" : 1,
-    "created" : 1
-    }',
-    sort = '{"created": 1}'
-  )
-
-base_yday = yday(previous_release_7_days_of_data_from_mongo[1,"created"])
-previous_release_7_days_of_data <-
-  previous_release_7_days_of_data_from_mongo %>%
-  unite(text, title, content, sep = " ") %>%
-  mutate(text = replace_html(text)) %>%
-  mutate(text  = str_replace_all(
-    text, pattern = '[bB]ookmark?s', replacement = 'bookmark')) %>%
-  mutate(text  = str_replace_all(
-    text, pattern = '[fF]irefox', replacement = '')) %>% 
-  mutate(release_week_day_number = yday(created) - base_yday + 1) %>% 
-  mutate(Firefox_Release = previousrelease)
-
-glimpse(previous_release_7_days_of_data )
-tail(previous_release_7_days_of_data)
-print(previous_release_7_days_of_data_from_mongo[1,"created"])
-
-antivirus_previous_release_7_days_of_data <-
-  previous_release_7_days_of_data %>% 
-  filter(
-    grepl("antivirus|anti-virus|anti\\svirus", text, ignore.case = TRUE) |
-      grepl("kaspersky|sophos|avast|avg", text, ignore.case = TRUE) |
-      grepl("bitdefender|norton|mcafee|secureanywhere", text, ignore.case = TRUE) |
-      grepl("trendmicro|trend\\smicro", text, ignore.case = TRUE) 
+previous_df <- 
+  mongo_get_by_date(
+    m,
+    as.integer(args[2]),
+    as.integer(args[3]),
+    as.integer(args[4])
     )
-      
-glimpse(antivirus_previous_release_7_days_of_data)
+glimpse(previous_df)
+previous_df_clean <- 
+  text_clean_kitsune_ff_desktop_questions(previous_df)
+glimpse(previous_df_clean)
+previous_df_release <- 
+  previous_df_clean %>%
+  mutate(Firefox_Release = previousrelease)
+glimpse(previous_df_release)
+previous_df_release_release_week_day_number <-
+  add_release_day_number(
+    previous_df_release,
+    as.integer(args[2]),
+    as.integer(args[3]),
+    as.integer(args[4])
+    )
+glimpse(previous_df_release_release_week_day_number)
+glimpse(tail(previous_df_release_release_week_day_number))
+
+previous_release_1_week_antivirus_only <-
+  antivirus_only(previous_df_release_release_week_day_number)
+glimpse(previous_release_1_week_antivirus_only)
 
 # end of previous release
 
+# start of current release refactored
+
 currentrelease <- args[5]
 print(currentrelease)
-current_release_start_date <- 
-  make_datetime(as.integer(args[6]), as.integer(args[7]),as.integer(args[8]), 0,0,0, 
-                tz = "America/Vancouver")
-print(current_release_start_date)
-
-CURR_RELEASE_MAX_DATE = current_release_start_date + days(7) - seconds(1)
-print(CURR_RELEASE_MAX_DATE)
-CURR_RELEASE_MIN_DATE = current_release_start_date
-
-query_str =
-  sprintf(
-    '{ "created" : { "$gte" : { "$date" : "%s"}, "$lte" : {"$date" : "%s"}}}',
-    strftime(CURR_RELEASE_MIN_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"),
-    strftime(CURR_RELEASE_MAX_DATE, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")  )
-
-current_release_7_days_of_data_from_mongo <-
-  m$find(
-    query = query_str,
-    fields =
-      '{
-    "_id" : 0,
-    "id" : 1,
-    "title" : 1,
-    "content" : 1,
-    "created" : 1
-    }',
-    sort = '{"created": 1}'
+current_df <- 
+  mongo_get_by_date(
+    m,
+    as.integer(args[6]),
+    as.integer(args[7]),
+    as.integer(args[8])
   )
-
-base_yday = yday(current_release_7_days_of_data_from_mongo[1,"created"])
-current_release_7_days_of_data <-
-  current_release_7_days_of_data_from_mongo %>%
-  unite(text, title, content, sep = " ") %>%
-  mutate(text = replace_html(text)) %>%
-  mutate(text  = str_replace_all(
-    text, pattern = '[bB]ookmark?s', replacement = 'bookmark')) %>%
-  mutate(text  = str_replace_all(
-    text, pattern = '[fF]irefox', replacement = '')) %>% 
-  mutate(release_week_day_number = yday(created) - base_yday + 1) %>% 
+glimpse(current_df)
+current_df_clean <- 
+  text_clean_kitsune_ff_desktop_questions(current_df)
+glimpse(current_df_clean)
+current_df_release <- 
+  current_df_clean %>%
   mutate(Firefox_Release = currentrelease)
-
-glimpse(current_release_7_days_of_data )
-tail(current_release_7_days_of_data)
-print(current_release_7_days_of_data_from_mongo[1,"created"])
-
-antivirus_current_release_7_days_of_data <-
-  current_release_7_days_of_data %>% 
-  filter(
-    grepl("antivirus|anti-virus|anti\\svirus", text, ignore.case = TRUE) |
-      grepl("kaspersky|sophos|avast|avg", text, ignore.case = TRUE) |
-      grepl("bitdefender|norton|mcafee|secureanywhere", text, ignore.case = TRUE) |
-      grepl("trendmicro|trend\\smicro", text, ignore.case = TRUE) 
+glimpse(current_df_release)
+current_df_release_release_week_day_number <-
+  add_release_day_number(
+    current_df_release,
+    as.integer(args[6]),
+    as.integer(args[7]),
+    as.integer(args[8])
   )
+glimpse(current_df_release_release_week_day_number)
+glimpse(tail(current_df_release_release_week_day_number))
 
-glimpse(antivirus_current_release_7_days_of_data)
+current_release_1_week_antivirus_only <-
+  antivirus_only(current_df_release_release_week_day_number)
+glimpse(current_release_1_week_antivirus_only)
+# end of current release refactored
+
 current_previous = bind_rows(
-  antivirus_current_release_7_days_of_data, 
-  antivirus_previous_release_7_days_of_data)
+  current_release_1_week_antivirus_only, 
+  previous_release_1_week_antivirus_only)
 glimpse(current_previous)
 current_previous_to_plot <-
   current_previous %>% 
