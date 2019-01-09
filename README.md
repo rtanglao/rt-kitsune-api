@@ -1,6 +1,13 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 08January2019 randomly sample 50 Firefox 64 questions from week 2 of FF64
+
+```bash
+./print-random-order-sumo-questions.rb 2018 12 18 2018 12 24 >randomized-ff64-week2-question-ids.txt
+head -50 randomized-ff64-week2-question-ids.txt | ./open-ids-in-browser.rb
+```
+
 ## 26november2018 update csv file with dataset for Firefox 63 Desktop
 
 ```bash
