@@ -3,6 +3,9 @@ library(tidyverse)
 library(lubridate)
 library(textclean)
 library(directlabels)
+suppressPackageStartupMessages(library(gmailr))
+suppressPackageStartupMessages(library(purrr))
+library(readr)
 
 source("mongo-get-3weeks-by-date.r")
 source("text-clean-kitsune-ff-desktop-questions.r")
@@ -10,19 +13,22 @@ source("add-release-week-number.r")
 source("antivirus-only.r")
 
 args <- commandArgs(TRUE)
-if(length(args) < 8) {
+if(length(args) < 9) {
   args <- c("--help")
 }
 if("--help" %in% args) {
   cat(" 
       Arguments:
-      currentrelease currentreleaseweekstart previousrelease previousreleaseweekstart
+      currentrelease currentreleaseweekstart previousrelease previousreleaseweekstart emailflagyesorno
       --help              - print this text 
       Example:
-      Rscript plot-antivirus-mentions-by-week.r FF62 2018 9 5 FF63 2018 10 23\n\n")
+      Rscript plot-antivirus-mentions-by-week.r FF62 2018 9 5 FF63 2018 10 23 emailflag\n\n")
   
   q(save="no")
 }
+
+emailflag = FALSE
+if(args[9] == "yes") { emailflag = TRUE }
 
 previousrelease <- args[1]
 
@@ -159,5 +165,24 @@ fn <- paste(
   args[8], sep="-"
 ) 
 ggsave(filename = paste(fn, ".png", sep =""), dpi = 320)
+if(emailflag) {
+  source("to_address.r")
+  email_sender <- 'rolandt@gmail.com'
+  use_secret_file("../rt-graphs.json")
+  print(fn)
+  mime() %>% 
+    to(to_address) %>% 
+    from(email_sender) %>% 
+    html_body(paste0(
+      "3 week FF Desktop antivirus mention comparison ", fn)) -> html_msg
+  html_msg %>% 
+    subject(
+      sprintf(
+        'FF Desktop Antivirus 3 weeks %s tags:%s %s antivirus antivirus3weeks firefox firefoxdesktop', 
+        fn, previousrelease, currentrelease)) %>% 
+    attach_file(paste0(fn, ".png")) -> file_attachment
+    
+  send_message(file_attachment)
+}
 quit()
 
