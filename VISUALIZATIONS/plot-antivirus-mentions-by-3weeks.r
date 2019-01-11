@@ -12,6 +12,8 @@ source("text-clean-kitsune-ff-desktop-questions.r")
 source("add-release-week-number.r")
 source("antivirus-only.r")
 
+script_main <- function()
+{
 args <- commandArgs(TRUE)
 if(length(args) < 9) {
   args <- c("--help")
@@ -28,9 +30,11 @@ if("--help" %in% args) {
 }
 
 emailflag = FALSE
+#debug(mongo_get_by_date)
 if(args[9] == "yes") { emailflag = TRUE }
 
 previousrelease <- args[1]
+print(previousrelease)
 
 m <- mongo("questions",
            url = "mongodb://127.0.0.1:27017/ff62questions")
@@ -44,7 +48,7 @@ previous_df <-
     )
 glimpse(previous_df)
 previous_df_clean <- 
-  text_clean_kitsune_ff_desktop_questions(previous_df)
+  text_clean_kitsune_ff_desktop_questions(previous_df, previousrelease)
 glimpse(previous_df_clean)
 previous_df_release <- 
   previous_df_clean %>%
@@ -79,7 +83,7 @@ current_df <-
   )
 glimpse(current_df)
 current_df_clean <- 
-  text_clean_kitsune_ff_desktop_questions(current_df)
+  text_clean_kitsune_ff_desktop_questions(current_df, currentrelease)
 glimpse(current_df_clean)
 current_df_release <- 
   current_df_clean %>%
@@ -186,5 +190,6 @@ if(emailflag) {
     
   send_message(file_attachment)
 }
-quit()
-
+}
+debug(script_main)
+script_main()

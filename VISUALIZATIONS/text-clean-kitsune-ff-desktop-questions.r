@@ -1,4 +1,4 @@
-text_clean_kitsune_ff_desktop_questions <- function(df) {
+text_clean_kitsune_ff_desktop_questions <- function(df, previousrelease) {
   return(
     df  %>%
       unite(text, title, content, sep = " ") %>%
