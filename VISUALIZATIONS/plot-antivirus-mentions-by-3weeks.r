@@ -168,12 +168,15 @@ fn <- paste(
   args[7],
   args[8], sep="-"
 ) 
-ggsave(filename = paste(fn, ".png", sep =""), dpi = 320)
+t = now()
+fn_uniq <- paste0(paste(fn, "generated", year(t), month(t), day(t),hour(t),minute(t),
+      as.integer(second(t)),sep="-"), ".png")
+print(fn_uniq)
+ggsave(filename = paste(fn_uniq, ".png", sep =""), dpi = 320)
 if(emailflag) {
   source("to_address.r")
   email_sender <- 'rolandt@gmail.com'
   use_secret_file("../rt-graphs.json")
-  print(fn)
   mime() %>% 
     to(to_address) %>% 
     from(email_sender) %>% 
@@ -185,8 +188,8 @@ if(emailflag) {
     subject(
       sprintf(
         'FF Desktop Antivirus 3 weeks %s tags:%s %s antivirus antivirus3weeks firefox firefoxdesktop', 
-        fn, previousrelease, currentrelease)) %>% 
-    attach_file(paste0(fn, ".png")) -> file_attachment
+        fn_uniq, previousrelease, currentrelease)) %>% 
+    attach_file(paste0(fn_uniq, ".png")) -> file_attachment
     
   send_message(file_attachment)
 }
