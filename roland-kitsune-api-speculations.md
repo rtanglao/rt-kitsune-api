@@ -10,6 +10,7 @@ These are speculations only. Not supported by me or anybody else.
 1. i believe there is a url parameter just to get modified questions and answers, not just the ones created but i've never tried to get just modified questions or answers
 1. to make the API practical in production there needs to be a way to ask for items from a particular time period and fortunately there's an open github issue for that :-) (and probably more github issues need to created to make this API useful in production)
     * https://github.com/mozilla/kitsune/issues/3332
+1. for production purposes a way to know when question and answers and users are deleted or modified would be great e.g. webhooks!
 1. sample question API code: https://github.com/rtanglao/rt-kitsune-api/blob/master/testAPI.rb
     * sample question API json response: https://github.com/rtanglao/rt-kitsune-api/blob/master/sample-question-api-result.md
     * API is:https://support.mozilla.org/api/2/question/?format=json&product=firefox&locale=en-US 
