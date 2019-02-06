@@ -1,4 +1,6 @@
-These are speculations only. Not supported by me or anybody else. Do not contact any folks mentioned here for support!
+These are speculations only. Not supported by me or anybody else. 
+
+**PLEASE: Do not contact any folks mentioned here for support or for questions!**
 
 1. found out about this api via ace volunteer's code for [myq.html](https://github.com/jscher2000/My-SuMo-Questions/blob/master/myq.html)
 1. there are no docs on readthedocs (there are docs for the very limited v1 api, this is v2 api)
