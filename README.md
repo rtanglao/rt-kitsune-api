@@ -1,6 +1,13 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 10february2019 forgot ff65 !
+
+```bash
+../../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion-1releaseweek.rb 2019 1 29 65 1
+mlr --csv cut -x -f  'product,topic,tags'  firefox*.csv > ff58-65-id-created-title-content-firefoxversion-1streleaseweek-day.csv
+```
+
 ## 10february2019 combine the csv files
 
 ```bash
