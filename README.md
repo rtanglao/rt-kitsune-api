@@ -6,6 +6,12 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 ```bash
 cd ~/GIT/rt-kitsune-api/VISUALIZATIONS/WEEK1
 ./../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion-1releaseweek.rb 2018 1 23 58 1
+../../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion-1releaseweek.rb 2018 3 13 59 1
+./../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion-1releaseweek.rb 2018 5 9 60 1
+../../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion-1releaseweek.rb 2018 6 26 61 1
+../../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion-1releaseweek.rb 2018 9 5 62 1
+../../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion-1releaseweek.rb 2018 10 23 63 1
+../../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion-1releaseweek.rb 2018 12 11 64 1
 ```
 
 ## 30january2019 print January 1, 2018 to December 31, 2018 sumo questions for A&T
