@@ -1,7 +1,14 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
-## 30january2018 print January 1, 2018 to December 31, 2018 sumo questions for A&T
+## 09February2019 print out week 1
+
+```bash
+cd ~/GIT/rt-kitsune-api/VISUALIZATIONS/WEEK1
+./../print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic-firefoxversion-1releaseweek.rb 2018 1 23 58 1
+```
+
+## 30january2019 print January 1, 2018 to December 31, 2018 sumo questions for A&T
 
 ```bash
 ./print-csv-ff-desktop-questions-id-content-created-product-tags-title-topic.rb 2018 1 1 2018 12 31 created30january2019-1jan2018-31dec2018-ff-desktop-questions-id-created-title-content-tags-product-topic.csv
