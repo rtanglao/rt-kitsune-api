@@ -41,7 +41,7 @@ if ARGV.length < 5
 end
 
 questionsColl = db[:questions]
-MIN_DATE = tzinfo.local_time(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
+min_date = tzinfo.local_time(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 FIREFOXVERSION = ARGV[3]
 RELEASEWEEK = ARGV[4]
 
@@ -53,11 +53,11 @@ headers = ['id', 'created', 'title', 'content', 'tags', 'product', 'topic', 'fir
 
 CSV.open(FILENAME, 'w', write_headers: true, headers: headers) do |csv|
   (1..7).each do |day|
-    MAX_DATE = MIN_DATE + 24 * 3600 - 1
+    max_date = min_date + 24 * 3600 - 1
     questionsColl.find(:created =>
     {
-      :$gte => MIN_DATE,
-      :$lte => MAX_DATE },
+      :$gte => min_date,
+      :$lte => max_date },
     ).sort(
     {"id"=> 1}
     ).projection(
@@ -79,6 +79,6 @@ CSV.open(FILENAME, 'w', write_headers: true, headers: headers) do |csv|
         q["created"].to_i.to_s, q["title"], q["content"], tag_str, q["product"], q["topic"],
         FIREFOXVERSION.to_i.to_s, RELEASEWEEK.to_i.to_s, day.to_i.to_s]
     end
-    MIN_DATE += 24 * 3600
+    min_date += 24 * 3600
   end
 end
