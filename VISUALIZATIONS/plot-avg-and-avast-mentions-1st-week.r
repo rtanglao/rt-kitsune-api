@@ -46,7 +46,21 @@ text_cleaned_df <-
   unite(text, title, content, sep = " ") %>%
   mutate(text = replace_html(text))
 avast_avg_only_df <- avast_avg_antirus_only(text_cleaned_df)
+plot_avast_avg_only_df <- avast_avg_only_df %>% 
+  mutate(firefoxversion = as.character(firefoxversion)) %>% 
+  group_by(firefoxversion, day) %>%
+  count()
 
+plot <-
+  ggplot(data=plot_avast_avg_only_df, 
+         aes(
+           x=day, y=n, group= firefoxversion, 
+           colour = firefoxversion, 
+           shape = firefoxversion))
+plot = plot +
+  geom_line(stat="identity") + 
+  geom_point() +
+  scale_x_discrete(limits = c("1", "2", "3", "4", "5", "6", "7")) 
 q(save="no")
 }
 
