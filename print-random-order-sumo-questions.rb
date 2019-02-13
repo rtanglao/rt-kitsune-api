@@ -6,7 +6,6 @@ require 'time'
 require 'date'
 require 'mongo'
 require 'logger'
-require 'launchy'
 
 logger = Logger.new(STDERR)
 logger.level = Logger::DEBUG
