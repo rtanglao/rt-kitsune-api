@@ -13,7 +13,7 @@ gleaned from my head :-) and https://en.wikipedia.org/wiki/Comparison_of_antivir
 * drweb
 * nod32
 * f-secure
-* f-[rot
+* f-prot
 * "g data"
 * forticlient
 * kaspersky
