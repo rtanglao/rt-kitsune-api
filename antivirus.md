@@ -24,7 +24,7 @@ gleaned from my head :-) and https://en.wikipedia.org/wiki/Comparison_of_antivir
 * immunet
 * norton
 * titanium
-* trsutport
+* trustport
 * webroot
 * secureanywhere
 * mcafee
