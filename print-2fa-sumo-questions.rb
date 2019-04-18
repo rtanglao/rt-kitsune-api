@@ -6,6 +6,7 @@ require 'time'
 require 'date'
 require 'mongo'
 require 'logger'
+require 'nokogiri'
 
 logger = Logger.new(STDERR)
 logger.level = Logger::DEBUG
@@ -65,5 +66,10 @@ questionsColl.find(:created =>
   }).each do |q|
     logger.debug q.ai
     id_array.push(q["id"])
+    content = Nokogiri::HTML(q["content"]).text
+    tags = q["tags"]
+    tags_str = tags.map { |tag| "#{tag['slug']}" }.join(' ')
+    text = tags_str + " " + q["title"] + " " + content
+    logger.debug text.ai
 end
 puts id_array
