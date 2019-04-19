@@ -42,11 +42,13 @@ questionsColl = db[:questions]
 MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
 MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
 
-count = questionsColl.find(:created =>
+count = questionsColl.find(
+  :created =>
   {
     :$gte => MIN_DATE,
-    :$lte => MAX_DATE },
-                          ).count
+    :$lte => MAX_DATE
+  }
+  ).count
 logger.debug count.ai
 
 id_array = []
@@ -72,8 +74,9 @@ questionsColl.find(:created =>
     text = tags_str + " " + q["title"] + " " + content
     text = text.downcase
     logger.debug text.ai
-    if (text =~ /(2fa|two-factor-authentication|two factor authentication|recovery code)/) ||
-      (text =~ /(two factor|dual factor|authy|2-factor|2 factor|google authenticator)/ )
+    if text =~ /(2fa|two-factor-authentication|two factor authentication|recovery code)/ ||
+      text =~
+      /(two factor|two-factor|dual factor|dual-factor|authy|2-factor|2 factor|google authenticator)/
       logger.debug "SETTING PUSH_ID to TRUE"
       push_id = true
     end
