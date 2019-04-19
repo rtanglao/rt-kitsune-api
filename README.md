@@ -4,7 +4,9 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 ## 18april2019 get 2fa SUMO Firefox Desktop Forum Questions
 
 ```bash
-./print-2fa-sumo-questions.rb 2019 1 1 2019 4 18 2>01jan2019-18january-2fa-stderr-out.txt >01january2019-18january2019-2fa-sumo-forum-question-ids.txt
+./print-2fa-sumo-questions.rb 2019 1 1 2019 4 18 2>01jan2019-18january-2fa-stderr-out.txt\
+>01january2019-18january2019-2fa-sumo-forum-question-ids.txt
+cat 01january2019-18january2019-2fa-sumo-forum-question-ids.txt | ./open-ids-in-browser.rb
 ```
 
 ## 10february2019 forgot ff65 !
