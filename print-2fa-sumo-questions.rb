@@ -65,11 +65,18 @@ questionsColl.find(:created =>
       "tags" => 1
   }).each do |q|
     logger.debug q.ai
-    id_array.push(q["id"])
+    push_id = false
     content = Nokogiri::HTML(q["content"]).text
     tags = q["tags"]
     tags_str = tags.map { |tag| "#{tag['slug']}" }.join(' ')
     text = tags_str + " " + q["title"] + " " + content
+    text = text.downcase
     logger.debug text.ai
-end
+    if (text =~ /(2fa|two-factor-authentication|two factor authentication|recovery code)/) ||
+      (text =~ /(two factor|dual factor|authy|2-factor|2 factor|google authenticator)/ )
+      logger.debug "SETTING PUSH_ID to TRUE"
+      push_id = true
+    end
+    id_array.push(q["id"]) if push_id
+  end
 puts id_array
