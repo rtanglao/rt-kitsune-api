@@ -9,6 +9,8 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 cat 01january2019-18january2019-2fa-sumo-forum-question-ids.txt | ./open-ids-in-browser.rb
 # which leads to 33 questions some of which are off topic and duplicates
 ```
+* remove duplicates and off topic and you end up with 22 questions in 4.5 months:
+https://github.com/rtanglao/rt-kitsune-api/blob/master/offtopic-and-duplicates-removed-01january2019-18january2019-2fa-sumo-forum-question-ids.txt
 
 ## 10february2019 forgot ff65 !
 
