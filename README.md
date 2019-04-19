@@ -7,6 +7,7 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 ./print-2fa-sumo-questions.rb 2019 1 1 2019 4 18 2>01jan2019-18january-2fa-stderr-out.txt\
 >01january2019-18january2019-2fa-sumo-forum-question-ids.txt
 cat 01january2019-18january2019-2fa-sumo-forum-question-ids.txt | ./open-ids-in-browser.rb
+# which leads to 33 questions some of which are off topic and duplicates
 ```
 
 ## 10february2019 forgot ff65 !
