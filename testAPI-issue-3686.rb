@@ -3,6 +3,7 @@ require 'json'
 require 'rubygems'
 require 'typhoeus'
 require 'awesome_print'
+require 'time'
 
 def getKitsuneResponse(url, params)
   result = Typhoeus::Request.get(url,
@@ -27,26 +28,28 @@ def getKitsuneResponse(url, params)
 end
 
  url_params = {
-    #  :format => "json",
-    #  :product => "firefox", # source: http://code.flickr.net/2008/09/04/whos-on-first/
-      #:created_date => "09/05/2018",
-      #:created_date => "2018-09-05",
-     # :locale => "en-US",
-   #   :ordering => "created",
-     # :ordering => "+created",
-     # :max_questions => 10,
-   #   :created => 2,
- #     :sortby => 1
 } 
 
 url = "https://support.mozilla.org/api/2/question/1259114/"
 question  = getKitsuneResponse(url, url_params)
 ap question
-ap question["answers"]
-ap question["content"]
 ap question["created"]
+api_time_in_seconds = Time.parse(question["created"]).to_i
+puts  "integer time in API:"+api_time_in_seconds.to_s
+sumo_website_time_in_seconds =
+  Time.parse("2019-05-13T07:53:40-0700").to_i
+puts "integer time in SUMO website:" + sumo_website_time_in_seconds.to_s
+difference = sumo_website_time_in_seconds - api_time_in_seconds
+if difference == 0
+  puts("TEST PASSED")
+else
+  puts("TEST FAILED! Difference in seconds sumo time - api time:" + 
+       (sumo_website_time_in_seconds - api_time_in_seconds).to_s)
+   puts("TEST FAILED! Difference in hours:" + 
+       ((sumo_website_time_in_seconds - api_time_in_seconds)/3600).to_s)
+  
+end
+                                              
 
-#ap questions["results"][0], { :html => true}
-#ap questions.length
-# ap questions["results"].length
+
 
