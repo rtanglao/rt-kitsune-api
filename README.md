@@ -1,6 +1,22 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 27may2018 testing https://github.com/mozilla/kitsune/issues/3686
+
+```bash
+./testAPI-issue-3686.rb  
+```
+
+output:
+
+```
+"2019-05-13T07:53:40Z"
+integer time in API:1557734020
+integer time in SUMO website:1557759220
+TEST FAILED! Difference in seconds sumo time - api time:25200
+TEST FAILED! Difference in hours:7
+```
+
 ## 18april2019 get 2fa SUMO Firefox Desktop Forum Questions
 
 ```bash
