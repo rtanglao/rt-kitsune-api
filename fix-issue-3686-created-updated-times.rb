@@ -79,17 +79,22 @@ questionsColl.find(:created =>
   logger.debug "fixed updated in seconds:" + fixed_updated_in_seconds.ai
   logger.debug "fixed updated ruby time:" + fixed_updated.ai
   id = q["id"]
-  result_array = questionsColl.find_one_and_update({"id" => id},
+  result = questionsColl.find_one_and_update({"id" => id},
                                           {"$set" => { "created" => fixed_created,
-                                           "updated" => fixed_updated}} ).to_a
-    nModified = 0
-    result_array.each do |item|
-      nModified = item["nModified"] if item.include?("nModified") 
-      break
-    end
-    if nModified == 0
-      logger.debug "INSERTED^^"
-    else
-      logger.debug "UPDATED^^^^^^"
-    end
+                                                       "updated" => fixed_updated}},
+                                          :return_document => :after).to_a
+  logger.debug "result:"+result.ai
+                                                                      
+                                                                      
+    # nModified = 0
+    # result_array.each do |item|
+    #   nModified = item["nModified"] if item.include?("nModified") 
+    #   break
+    # end
+    # if nModified == 0
+    #   logger.debug "INSERTED^^"
+    # else
+    #   logger.debug "UPDATED^^^^^^"
+    # end
+    
 end
