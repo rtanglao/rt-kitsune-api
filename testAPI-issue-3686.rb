@@ -5,6 +5,8 @@ require 'typhoeus'
 require 'awesome_print'
 require 'time'
 
+# This script tests: https://github.com/mozilla/kitsune/issues/3686
+
 def getKitsuneResponse(url, params)
   result = Typhoeus::Request.get(url,
     :params => params )
