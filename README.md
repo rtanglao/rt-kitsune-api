@@ -1,7 +1,13 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
-## 27may2018 testing https://github.com/mozilla/kitsune/issues/3686
+## 03june2019 workflow with fix for 3686
+
+```bash 
+./get-sumo-firefox-questions-from-api.rb 2019 5 1 2>03june2019-03june-01may2019-stderr-getquestions.txt &
+./fix-issue-3686-created-updated-times.rb
+```
+## 27may2019 testing https://github.com/mozilla/kitsune/issues/3686
 
 ```bash
 ./testAPI-issue-3686.rb  
