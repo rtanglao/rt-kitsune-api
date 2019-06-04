@@ -1,11 +1,18 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 04june2019 print unanswered questions
+
+```bash
+./get-sumo-firefox-questions-from-api.rb 2019 5 1 2>04june2019-04june-01may2019-stderr-getquestions.txt &
+./fix-issue-3686-created-updated-times.rb 2019 5 1 2019 6 3 
+```
+
 ## 03june2019 workflow with fix for 3686
 
 ```bash 
 ./get-sumo-firefox-questions-from-api.rb 2019 5 1 2>03june2019-03june-01may2019-stderr-getquestions.txt &
-./fix-issue-3686-created-updated-times.rb
+./fix-issue-3686-created-updated-times.rb 2019 5 1 2019 6 3 
 ./print-random-order-sumo-questions.rb 2019 5 28 2019 5 28 >03june2019-randomized-ff67-week2-day1-28may2019-question-ids.txt  
 head -20 03june2019-randomized-ff67-week2-day1-28may2019-question-ids.txt | ./open-ids-in-browser.rb
 ```
