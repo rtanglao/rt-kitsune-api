@@ -1,20 +1,20 @@
-https://support.mozilla.org/questions/1260632
-https://support.mozilla.org/questions/1260701
-https://support.mozilla.org/questions/1260715
-https://support.mozilla.org/questions/1260723
-https://support.mozilla.org/questions/1260724
-https://support.mozilla.org/questions/1260734
-https://support.mozilla.org/questions/1260751
-https://support.mozilla.org/questions/1260758
-https://support.mozilla.org/questions/1260761
-https://support.mozilla.org/questions/1260762
-https://support.mozilla.org/questions/1260764
-https://support.mozilla.org/questions/1260767
-https://support.mozilla.org/questions/1260820
-https://support.mozilla.org/questions/1260835
-https://support.mozilla.org/questions/1260837
-https://support.mozilla.org/questions/1260860
-https://support.mozilla.org/questions/1260893
-https://support.mozilla.org/questions/1260925
-https://support.mozilla.org/questions/1260934
-https://support.mozilla.org/questions/1260944
+* https://support.mozilla.org/questions/1260632
+* https://support.mozilla.org/questions/1260701
+* https://support.mozilla.org/questions/1260715
+* https://support.mozilla.org/questions/1260723
+* https://support.mozilla.org/questions/1260724
+* https://support.mozilla.org/questions/1260734
+* https://support.mozilla.org/questions/1260751
+* https://support.mozilla.org/questions/1260758
+* https://support.mozilla.org/questions/1260761
+* https://support.mozilla.org/questions/1260762
+* https://support.mozilla.org/questions/1260764
+* https://support.mozilla.org/questions/1260767
+* https://support.mozilla.org/questions/1260820
+* https://support.mozilla.org/questions/1260835
+* https://support.mozilla.org/questions/1260837
+* https://support.mozilla.org/questions/1260860
+* https://support.mozilla.org/questions/1260893
+* https://support.mozilla.org/questions/1260925
+* https://support.mozilla.org/questions/1260934
+* https://support.mozilla.org/questions/1260944
