@@ -5,7 +5,7 @@ roland's experiments with kitsune api for sumo aka support.mozilla.org
 
 ```bash
 ./get-sumo-firefox-questions-from-api.rb 2019 5 1 2>04june2019-04june-01may2019-stderr-getquestions.txt &
-./fix-issue-3686-created-updated-times.rb 2019 5 1 2019 6 3 
+./fix-issue-3686-created-updated-times.rb 2019 5 1 2019 6 4
 ```
 
 ## 03june2019 workflow with fix for 3686
