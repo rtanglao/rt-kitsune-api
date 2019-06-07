@@ -39,43 +39,47 @@ if ARGV.length < 6
 end
 
 questionsColl = db[:questions]
-MIN_DATE = Time.utc(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0)
-MAX_DATE = Time.utc(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59)
+MIN_DATE = Time.local(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0) # may want Time.utc if you don't want local time
+MAX_DATE = Time.local(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) # may want Time.utc if you don't want local time
 
 count = questionsColl.find(
   :created =>
   {
     :$gte => MIN_DATE,
     :$lte => MAX_DATE
-  },
-  :num_answers =>
-  {
-    :$eq => 0
   }
   ).count
 logger.debug count.ai
 
 id_array = []
-questionsColl.find(
-  :created =>
+questionsColl.find(:created =>
   {
     :$gte => MIN_DATE,
-    :$lte => MAX_DATE
-  },
-  :num_answers =>
-  {
-    :$eq => 0
-  }
-).sort(
+    :$lte => MAX_DATE }).sort(
     {"id"=> 1}
     ).projection(
     {
       "_id" => 0,
       "id" => 1,
       "created" => 1,
-      "num_answers" => 1
+      "title" => 1,
+      "content" => 1,
+      "tags" => 1
   }).each do |q|
-  logger.debug q.ai
-
-end
-
+    logger.debug q.ai
+    push_id = false
+    content = Nokogiri::HTML(q["content"]).text
+    tags = q["tags"]
+    tags_str = tags.map { |tag| "#{tag['slug']}" }.join(' ')
+    text = tags_str + " " + q["title"] + " " + content
+    text = text.downcase
+    logger.debug text.ai
+    if text =~ /(2fa|two-factor-authentication|two factor authentication|recovery code)/ ||
+      text =~
+      /(two factor|two-factor|dual factor|dual-factor|authy|2-factor|2 factor|google authenticator)/
+      logger.debug "SETTING PUSH_ID to TRUE"
+      push_id = true
+    end
+    id_array.push(q["id"]) if push_id
+  end
+puts id_array
