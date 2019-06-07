@@ -77,5 +77,6 @@ questionsColl.find(
   }).each do |q|
   logger.debug q.ai
 
+  puts "* https://support.mozilla.org/questions/" + q["id"].to_s
 end
 
