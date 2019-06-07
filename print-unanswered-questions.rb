@@ -40,7 +40,7 @@ end
 
 questionsColl = db[:questions]
 MIN_DATE = Time.utc(ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i, 0, 0)
-MAX_DATE = Time.utc(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59) 
+MAX_DATE = Time.utc(ARGV[3].to_i, ARGV[4].to_i, ARGV[5].to_i, 23, 59)
 
 count = questionsColl.find(
   :created =>
@@ -65,7 +65,7 @@ questionsColl.find(
   :num_answers =>
   {
     :$eq => 0
-  }  
+  }
 ).sort(
     {"id"=> 1}
     ).projection(
@@ -77,6 +77,6 @@ questionsColl.find(
   }).each do |q|
   logger.debug q.ai
 
-  puts "https://support.mozilla.org/questions/" + q["id"].to_s
+  puts "*https://support.mozilla.org/questions/" + q["id"].to_s
 end
 
