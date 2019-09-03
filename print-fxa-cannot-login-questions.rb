@@ -76,7 +76,8 @@ questionsColl.find(:created =>
     logger.debug text.ai
     if text =~ /(fxa|firefoxaccount|firefox account|login)/ ||
       text =~
-      /(sync|signin|locked)/
+      /(sync|signin|locked)/ ||
+      text =~ /(2fa|totp|password|forgot password|lost password)/
       logger.debug "SETTING PUSH_ID to TRUE"
       push_id = true
     end
