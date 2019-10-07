@@ -1,6 +1,111 @@
 # rt-kitsune-api
 roland's experiments with kitsune api for sumo aka support.mozilla.org
 
+## 07october2019 api fix for 3686 passed on staging!
+
+see https://github.com/mozilla/kitsune/issues/3686#issuecomment-539199847
+
+i tested this and it works on staging!
+
+* test code for staging is here:
+
+https://github.com/rtanglao/rt-kitsune-api/blob/master/staging-testAPI-issue-3686.rb
+
+```bash.
+./staging-testAPI-issue-3686.rb
+```
+
+output:
+
+```
+{
+                "answers" => [],
+                "content" => "<p>testjkknkjn\n</p>",
+                "created" => "2019-10-04T09:41:37Z",
+                "creator" => {
+            "username" => "roxanaleitan",
+        "display_name" => "roxana admin",
+              "avatar" => "https://firefoxusercontent.com/00000000000000000000000000000000"
+    },
+                     "id" => 1207006,
+               "involved" => [
+        [0] {
+                "username" => "roxanaleitan",
+            "display_name" => "roxana admin",
+                  "avatar" => "https://firefoxusercontent.com/00000000000000000000000000000000"
+        }
+    ],
+            "is_archived" => false,
+              "is_locked" => false,
+              "is_solved" => false,
+                "is_spam" => false,
+               "is_taken" => false,
+            "last_answer" => nil,
+                 "locale" => "en-US",
+               "metadata" => [
+        [0] {
+             "name" => "category",
+            "value" => "download-and-install"
+        },
+        [1] {
+             "name" => "ff_version",
+            "value" => "69.0"
+        },
+        [2] {
+             "name" => "os",
+            "value" => "Windows 10"
+        },
+        [3] {
+             "name" => "plugins",
+            "value" => "* Shockwave Flash 32.0 r0"
+        },
+        [4] {
+             "name" => "product",
+            "value" => "desktop"
+        },
+        [5] {
+             "name" => "useragent",
+            "value" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0"
+        }
+    ],
+                   "tags" => [
+        [0] {
+            "name" => "download-and-install",
+            "slug" => "download-and-install_1"
+        },
+        [1] {
+            "name" => "Firefox 69.0",
+            "slug" => "firefox-690"
+        },
+        [2] {
+            "name" => "desktop",
+            "slug" => "desktop"
+        },
+        [3] {
+            "name" => "Windows 10",
+            "slug" => "windows-10"
+        }
+    ],
+            "num_answers" => 0,
+    "num_votes_past_week" => 0,
+              "num_votes" => 1,
+                "product" => "firefox",
+               "solution" => nil,
+              "solved_by" => nil,
+            "taken_until" => nil,
+               "taken_by" => nil,
+                  "title" => "test roxana",
+                  "topic" => "download-and-install",
+             "updated_by" => nil,
+                "updated" => "2019-10-04T09:41:37Z"
+}
+"2019-10-04T09:41:37Z"
+integer time in API:1570182097
+integer time in SUMO website:1570182097
+TEST PASSED
+```
+
+
 ## 04june2019 print unanswered questions
 
 ```bash
